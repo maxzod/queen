@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:queen/themes.dart';
+import 'package:queen/queen.dart';
 
-/// * queen theme builder
+/// * listen and rebuild when
+/// - theme changes
+/// - locale changes
 class QueenBuilder extends StatefulWidget {
   /// the app builder
   final WidgetBuilder builder;
@@ -16,12 +18,31 @@ class QueenBuilder extends StatefulWidget {
 class _QThemeBuilderState extends State<QueenBuilder> {
   @override
   void initState() {
-    QTheme.addListener(() {
-      if (mounted) setState(() {});
-    });
+    // * watch theme changes
+    QTheme.addListener(
+      () => mounted ? setState(() {}) : () {},
+    );
+    // * watch locale changes
+    Nations.addListener(
+      () => _forceRebuild(context),
+    );
     super.initState();
   }
 
+  void _forceRebuild(BuildContext context) {
+    void rebuild(Element element) {
+      if (element.debugDoingBuild || element.dirty) return;
+      element
+        ..markNeedsBuild()
+        ..visitChildren(rebuild);
+    }
+
+    (context as Element).visitChildren(rebuild);
+  }
+
   @override
-  Widget build(BuildContext context) => widget.builder(context);
+  Widget build(BuildContext context) {
+    _forceRebuild(context);
+    return widget.builder(context);
+  }
 }

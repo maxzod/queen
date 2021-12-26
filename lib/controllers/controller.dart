@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'config.dart';
+import '../config/config.dart';
 
 /// theme controller
 // ignore: non_constant_identifier_names

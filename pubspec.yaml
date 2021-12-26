@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_readable: ^0.0.2
+  nations: ^0.0.5
+  queen_validators: ^0.2.3
   shared_preferences: ^2.0.7
 
 dev_dependencies:

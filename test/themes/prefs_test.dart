@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:queen/queen.dart';
-import 'package:queen/themes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TestConfig extends QThemeConfig {
