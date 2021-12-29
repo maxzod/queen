@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
@@ -8,8 +9,14 @@ class QueenBuilder extends StatefulWidget {
   /// the app builder
   final WidgetBuilder builder;
 
+  final bool enableDevtools;
+
   /// takes builder to calls every time theme changes
-  const QueenBuilder({Key? key, required this.builder}) : super(key: key);
+  const QueenBuilder({
+    Key? key,
+    required this.builder,
+    this.enableDevtools = kDebugMode,
+  }) : super(key: key);
 
   @override
   _QThemeBuilderState createState() => _QThemeBuilderState();
@@ -43,6 +50,21 @@ class _QThemeBuilderState extends State<QueenBuilder> {
   @override
   Widget build(BuildContext context) {
     _forceRebuild(context);
-    return widget.builder(context);
+    final child = widget.builder(context);
+    if (widget.enableDevtools) {
+      return MaterialApp(
+        home: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ElevatedButton(
+              onPressed: QTheme.next,
+              child: const Text('next'),
+            ),
+            Expanded(child: child),
+          ],
+        ),
+      );
+    }
+    return child;
   }
 }
