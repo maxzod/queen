@@ -55,10 +55,24 @@ class _QThemeBuilderState extends State<QueenBuilder> {
       return MaterialApp(
         home: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: QTheme.next,
-              child: const Text('next'),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                  onPressed: QTheme.next,
+                  child: const Text('next'),
+                ),
+                ElevatedButton(
+                  onPressed: () => Nations.updateLocale(const Locale('ar')),
+                  child: const Text('use AR'),
+                ),
+                ElevatedButton(
+                  onPressed: () => Nations.updateLocale(const Locale('en')),
+                  child: const Text('use EN'),
+                ),
+              ],
             ),
             Expanded(child: child),
           ],
