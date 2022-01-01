@@ -53,6 +53,7 @@ class _QThemeBuilderState extends State<QueenBuilder> {
     final child = widget.builder(context);
     if (widget.enableDevtools) {
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
