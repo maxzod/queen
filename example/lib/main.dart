@@ -3,27 +3,19 @@ import 'package:queen/queen.dart';
 import 'package:queen_themes_example/home.dart';
 
 import 'config/lang.dart';
+import 'config/theme.dart';
 
-void main() {
-  Queen.boot(
+void main() async {
+  await Queen.boot(
     themeConfig: AppThemesConfig(),
     nationsConfig: AppLangConfig(),
   );
-  runApp(QueenBuilder(builder: (ctx) => const MyApp()));
-}
-
-class AppThemesConfig extends QThemeConfig {
-  @override
-  List<ThemeData> get themes => [
-        ThemeData.dark(),
-        ThemeData(
-          scaffoldBackgroundColor: Colors.yellow,
-        ),
-        ThemeData.light(),
-        ThemeData(
-          scaffoldBackgroundColor: Colors.red,
-        ),
-      ];
+  runApp(
+    QueenBuilder(
+      // enableDevtools: false,
+      builder: (ctx) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -31,8 +23,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+
       /// * theming
-      theme: QTheme.current,
+      theme: Queen.currentTheme,
 
       /// * localizations
       locale: Nations.locale,
@@ -42,5 +36,27 @@ class MyApp extends StatelessWidget {
       /// *
       home: const HomePage(),
     );
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home: Column(
+    //     mainAxisSize: MainAxisSize.min,
+    //     children: [
+    //       const DebugBar(),
+    //       Expanded(
+    //           child: MaterialApp(
+    //         /// * theming
+    //         theme: Queen.currentTheme,
+
+    //         /// * localizations
+    //         locale: Nations.locale,
+    //         supportedLocales: Nations.supportedLocales,
+    //         localizationsDelegates: Nations.delegates,
+
+    //         /// *
+    //         home: const HomePage(),
+    //       )),
+    //     ],
+    //   ),
+    // );
   }
 }

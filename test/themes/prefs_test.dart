@@ -5,14 +5,26 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class TestConfig extends QThemeConfig {
   @override
-  List<ThemeData> get themes => [
-        ThemeData.dark(),
-        ThemeData.light(),
-        ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: Colors.black,
+  List<QTheme> get themes => [
+        QTheme(
+          theme: ThemeData.dark(),
+          name: 'Dark',
         ),
-        ThemeData.light().copyWith(
-          scaffoldBackgroundColor: Colors.red,
+        QTheme(
+          theme: ThemeData(
+            scaffoldBackgroundColor: Colors.yellow,
+          ),
+          name: 'Yellow',
+        ),
+        QTheme(
+          theme: ThemeData.light(),
+          name: 'Light',
+        ),
+        QTheme(
+          theme: ThemeData(
+            scaffoldBackgroundColor: Colors.red,
+          ),
+          name: 'Red',
         ),
       ];
 }
@@ -24,10 +36,10 @@ class TestApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return QueenBuilder(
       builder: (ctx) => MaterialApp(
-        theme: QTheme.current,
+        theme: Queen.currentTheme,
         home: Scaffold(
           body: Center(
-            child: Text(QTheme.currentIndex.toString()),
+            child: Text(Queen.currentIndex.toString()),
           ),
         ),
       ),
@@ -41,12 +53,12 @@ void main() {
     SharedPreferences.setMockInitialValues({
       'queen.theme.index': 1,
     });
-    await QTheme.boot(TestConfig());
+    await Queen.bootTheme(TestConfig());
   });
   test(
     'it saves the theme to shared preferences',
     () async {
-      await QTheme.next();
+      await Queen.nextTheme();
       final prefs = await SharedPreferences.getInstance();
       expect(prefs.getInt('queen.theme.index'), 2);
     },

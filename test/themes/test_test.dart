@@ -10,10 +10,10 @@ class TestApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return QueenBuilder(
       builder: (ctx) => MaterialApp(
-        theme: QTheme.current,
+        theme: Queen.currentTheme,
         home: Scaffold(
           body: Center(
-            child: Text(QTheme.currentIndex.toString()),
+            child: Text(Queen.currentIndex.toString()),
           ),
         ),
       ),
@@ -25,7 +25,7 @@ void main() {
   setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
     await (await SharedPreferences.getInstance()).clear();
-    await QTheme.boot();
+    await Queen.bootTheme();
   });
   testWidgets(
     'it rebuilds after theme Changes',
@@ -36,7 +36,7 @@ void main() {
       final counterZero = find.text('0');
       expect(counterZero, findsOneWidget);
 
-      await QTheme.next();
+      await Queen.nextTheme();
       await tester.pumpAndSettle();
 
       final counterOne = find.text('1');

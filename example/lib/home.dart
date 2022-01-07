@@ -38,13 +38,28 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => QTheme.next(),
+        onPressed: () => Queen.nextTheme(),
         child: const Icon(Icons.add),
       ),
       body: Center(
-        child: Text(
-          QTheme.currentIndex.toString(),
-          style: Theme.of(context).textTheme.headline1,
+        child: Column(
+          children: [
+            Text(
+              Queen.currentIndex.toString(),
+              style: Theme.of(context).textTheme.headline1,
+            ),
+            Text(
+              colorToString(Colors.green),
+              style: context.headline1,
+            ),
+            Container(
+              color: Colors.red,
+              child: Text(
+                (Color(int.parse('0xff4caf50')) == Colors.green).toString(),
+                style: context.headline1,
+              ),
+            ),
+          ],
         ),
       ),
       appBar: AppBar(
@@ -52,4 +67,13 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+String colorToString(Color color) {
+  return color.value.toRadixString(16);
+  // .padLeft(8, '0');
+}
+
+Color colorFromString(String color) {
+  return Color(int.parse(color));
 }

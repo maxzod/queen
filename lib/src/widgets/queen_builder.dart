@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:queen/private/theme.dart';
 import 'package:queen/queen.dart';
 
 /// * listen and rebuild when
@@ -23,22 +24,27 @@ class QueenBuilder extends StatefulWidget {
 }
 
 class _QThemeBuilderState extends State<QueenBuilder> {
+  late VoidCallback _changeListener;
   @override
   void initState() {
+    _changeListener = () => mounted ? setState(() {}) : () {};
     // * watch theme changes
-    QTheme.addListener(
-      () => mounted ? setState(() {}) : () {},
-    );
+    Queen.addListener(_changeListener);
     // * watch locale changes
-    Nations.addListener(
-      () => _forceRebuild(context),
-    );
+    Nations.addListener(_changeListener);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    Queen.removeListener(_changeListener);
+    Nations.removeListener(_changeListener);
+    super.dispose();
   }
 
   void _forceRebuild(BuildContext context) {
     void rebuild(Element element) {
-      if (element.debugDoingBuild || element.dirty) return;
+      if (element.debugDoingBuild) return;
       element
         ..markNeedsBuild()
         ..visitChildren(rebuild);
@@ -53,33 +59,31 @@ class _QThemeBuilderState extends State<QueenBuilder> {
     final child = widget.builder(context);
     if (widget.enableDevtools) {
       return MaterialApp(
+        theme: kQueenTheme,
         debugShowCheckedModeBanner: false,
-        home: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ElevatedButton(
-                  onPressed: QTheme.next,
-                  child: const Text('next'),
-                ),
-                ElevatedButton(
-                  onPressed: () => Nations.updateLocale(const Locale('ar')),
-                  child: const Text('use AR'),
-                ),
-                ElevatedButton(
-                  onPressed: () => Nations.updateLocale(const Locale('en')),
-                  child: const Text('use EN'),
-                ),
-              ],
-            ),
-            Expanded(child: child),
-          ],
-        ),
+        // home: DevToolsView(child: child),
+        home: DevToolsView(child: child),
       );
     }
     return child;
+  }
+}
+
+class DevToolsView extends StatelessWidget {
+  final Widget child;
+  const DevToolsView({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const DebugBar(),
+        Expanded(child: child),
+      ],
+    );
   }
 }
