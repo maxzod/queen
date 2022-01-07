@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_readable: ^0.0.2
-  nations: ^0.0.5
+  nations: ^0.0.7
   queen_validators: ^0.2.3
   shared_preferences: ^2.0.7
   url_launcher: ^6.0.17
