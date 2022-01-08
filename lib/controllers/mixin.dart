@@ -45,7 +45,6 @@ mixin QBaseThemeMixin on ChangeNotifier {
     try {
       _current = config.themes[index];
       await _prefs.setInt('queen.theme.index', index);
-      print('updatedTo ${_current!.name}');
       notifyListeners();
     } catch (e) {
       if (e is RangeError) {

@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
@@ -34,14 +32,15 @@ class _DebugBarState extends State<DebugBar> {
     final _topRow = Row(
       children: <Widget>[
         IconButton(
-            onPressed: () {
-              setState(() {
-                _isOpen = _isOpen.toggle;
-              });
-            },
-            icon: Icon(
-              _isOpen ? Icons.arrow_upward : Icons.arrow_downward,
-            )),
+          onPressed: () {
+            setState(() {
+              _isOpen = _isOpen.toggle;
+            });
+          },
+          icon: Icon(
+            _isOpen ? Icons.arrow_upward : Icons.arrow_downward,
+          ),
+        ),
         DebugButton(
           onPressed: Queen.nextTheme,
           title: '🎨 ${nextTheme.name}',
