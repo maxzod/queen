@@ -81,7 +81,7 @@ class DevToolsView extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const DebugBar(),
+        const SafeArea(child: DebugBar()),
         Expanded(child: child),
       ],
     );
