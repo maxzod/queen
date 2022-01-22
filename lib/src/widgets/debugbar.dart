@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
-extension on bool {
-  bool get toggle => !this;
-}
-
 class DebugBar extends StatefulWidget {
   const DebugBar({Key? key}) : super(key: key);
 
@@ -34,7 +30,7 @@ class _DebugBarState extends State<DebugBar> {
         IconButton(
           onPressed: () {
             setState(() {
-              _isOpen = _isOpen.toggle;
+              _isOpen = _isOpen.toggle();
             });
           },
           icon: Icon(
@@ -51,34 +47,36 @@ class _DebugBarState extends State<DebugBar> {
         ),
       ],
     );
-    final _bottomRow = Row(
+    final _bottomRow = Column(
       children: <Widget>[
-        DropdownButton<Locale>(
-          value: Nations.locale,
-          elevation: 16,
-          onChanged: (Locale? newValue) {
-            if (newValue != null) Nations.updateLocale(newValue);
-          },
-          items: Nations.supportedLocales.map<DropdownMenuItem<Locale>>(
-            (Locale value) {
-              return DropdownMenuItem<Locale>(
-                value: value,
-                child: Text(value.toString()),
-              );
-            },
-          ).toList(),
+        Row(
+          children: Nations.supportedLocales
+              .map(
+                (e) => Expanded(
+                  child: RadioListTile<Locale>(
+                    title: Text(e.toString()),
+                    value: e,
+                    groupValue: Nations.locale,
+                    onChanged: (newValue) {
+                      if (newValue != null) Nations.updateLocale(newValue);
+                    },
+                  ),
+                ),
+              )
+              .toList(),
         ),
-        DropdownButton<QTheme>(
-          value: Queen.currentQTheme,
-          elevation: 16,
-          onChanged: (QTheme? newValue) {
-            if (newValue != null) Queen.updateTo(newValue);
-          },
-          items: Queen.config.themes
-              .map<DropdownMenuItem<QTheme>>(
-                (QTheme value) => DropdownMenuItem<QTheme>(
-                  value: value,
-                  child: Text(value.name),
+        Row(
+          children: Queen.config.themes
+              .map(
+                (e) => Expanded(
+                  child: RadioListTile<QTheme>(
+                    title: Text(e.name),
+                    value: e,
+                    groupValue: Queen.currentQTheme,
+                    onChanged: (newValue) {
+                      if (newValue != null) Queen.updateTo(newValue);
+                    },
+                  ),
                 ),
               )
               .toList(),
