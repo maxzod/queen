@@ -4,9 +4,7 @@ import 'package:get_it/get_it.dart';
 
 final _container = GetIt.instance;
 
-class Locators {
-  Locators._();
-
+abstract class Locators {
   /// put the instance in the container
   static T put<T extends Object>(T instance) {
     _container.registerSingleton(instance);

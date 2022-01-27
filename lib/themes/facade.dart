@@ -3,10 +3,8 @@ import 'package:queen/locators.dart';
 import 'package:queen/themes.dart';
 
 /// facade for the theme features
-class AppTheme {
-  // to prevent any one from creating instance of this facade
-  AppTheme._();
-
+abstract class AppTheme {
+  /// shortcut for the rest of the functions
   static ThemeController get _controller => Locators.find<ThemeController>();
 
   /// return current app theme
@@ -17,7 +15,11 @@ class AppTheme {
 
   /// return current `QTheme`
   static QTheme get qTheme => _controller.currentQTheme;
+
+  /// return list of supported QThemes
   static List<QTheme> get supportedThemes => _controller.config.themes;
+
+  /// update theme to use the given one
   static Future<void> updateTo(
     QTheme theme,
   ) =>

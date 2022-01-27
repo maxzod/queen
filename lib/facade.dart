@@ -4,9 +4,7 @@ import 'package:queen/queen.dart';
 import 'core/helpers/testing.dart';
 
 /// app facade
-class App {
-  App._();
-
+abstract class App {
   static SharedPreferences get prefs => Locators.find<SharedPreferences>();
 
   static Locale get locale {
