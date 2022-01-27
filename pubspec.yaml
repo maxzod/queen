@@ -1,6 +1,7 @@
 name: queen
 description: collection of tools for the day to day work as a flutter
 version: 0.0.1
+publish_to: "none"
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -10,12 +11,17 @@ dependencies:
   equatable: ^2.0.3
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_readable: ^0.0.3
-  nations: ^0.0.7
-  queen_validators: ^0.2.3
+  get_it: ^7.2.0
   shared_preferences: ^2.0.7
   url_launcher: ^6.0.17
-
+  queen_validators:
+    git:
+      url: git@github.com:FlutterQueen/validators.git
+      ref: 5ed46ea42aa22bbc5097a5925aa5fc5d2a59f2d9
+  nations_assets: ^0.0.4
 dev_dependencies:
   flutter_test:
     sdk: flutter

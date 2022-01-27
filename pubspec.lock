@@ -84,7 +84,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_localizations:
-    dependency: transitive
+    dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -105,6 +105,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  get_it:
+    dependency: "direct main"
+    description:
+      name: get_it
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "7.2.0"
   intl:
     dependency: transitive
     description:
@@ -140,15 +147,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
-  nations:
-    dependency: "direct main"
-    description:
-      name: nations
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.7"
   nations_assets:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: nations_assets
       url: "https://pub.dartlang.org"
@@ -206,10 +206,12 @@ packages:
   queen_validators:
     dependency: "direct main"
     description:
-      name: queen_validators
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.3"
+      path: "."
+      ref: "5ed46ea42aa22bbc5097a5925aa5fc5d2a59f2d9"
+      resolved-ref: "5ed46ea42aa22bbc5097a5925aa5fc5d2a59f2d9"
+      url: "git@github.com:FlutterQueen/validators.git"
+    source: git
+    version: "1.0.0"
   readable:
     dependency: transitive
     description:

@@ -1,28 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
-class AppThemesConfig extends QThemeConfig {
+class AppThemeConfig extends ThemeConfig {
+  /// * List of available thames
   @override
   List<QTheme> get themes => [
         QTheme(
+          id: 'dark',
+          name: 'dark',
           theme: ThemeData.dark(),
-          name: 'Dark',
         ),
         QTheme(
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.yellow,
-          ),
-          name: 'Yellow',
-        ),
-        QTheme(
+          id: 'light',
+          name: 'light',
           theme: ThemeData.light(),
-          name: 'Light',
-        ),
-        QTheme(
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.red,
-          ),
-          name: 'Red',
         ),
       ];
 }
