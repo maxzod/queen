@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
-import 'core/helpers/testing.dart';
-
 /// app facade
 abstract class App {
   static SharedPreferences get prefs => Locators.find<SharedPreferences>();
@@ -16,10 +14,6 @@ abstract class App {
     NationsConfig nationsConfig = const NationsConfig(),
     ThemeConfig themeConfig = const ThemeConfig(),
   }) async {
-    if (!isInTesting) {
-      WidgetsFlutterBinding.ensureInitialized();
-    }
-
     final _prefs = await SharedPreferences.getInstance();
     final _themeController = ThemeController(config: themeConfig);
     final _transController = TransController(config: nationsConfig);
@@ -35,9 +29,4 @@ abstract class App {
   static Future<void> dispose() async {
     await Locators.reset();
   }
-}
-
-class Auth {
-  Auth._();
-  Future<void> signOut() async {}
 }

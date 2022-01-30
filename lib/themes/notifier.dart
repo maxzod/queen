@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_readable/flutter_readable.dart';
 import 'package:queen/facade.dart';
@@ -51,7 +49,7 @@ class ThemeController extends ChangeNotifier {
 
   Future<void> updateThemeByName(String name) async {
     final theme = config.themes.firstWhereOrNull(
-      (e) => e.name.toLowerCase() == name.toLowerCase(),
+      (e) => e.name == name,
     );
 
     if (theme != null) {
@@ -61,13 +59,9 @@ class ThemeController extends ChangeNotifier {
 
   Future<void> updateByIndex(int index) async {
     try {
-      return updateByIndexOrThrow(index);
-    } catch (e) {
-      if (e is RangeError) {
-        log("cant update theme to $index since there is only ${config.themes.length} themes");
-      } else {
-        rethrow;
-      }
+      await updateByIndexOrThrow(index);
+    } catch (err) {
+      if (err is! RangeError) rethrow;
     }
   }
 

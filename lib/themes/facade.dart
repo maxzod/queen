@@ -34,10 +34,10 @@ abstract class AppTheme {
 
   /// updates the app theme by the name
   /// ! if there is no theme by that name , it will throw
-  static Future<void> updateByNameOrThrow(
-    String name,
-  ) =>
-      _controller.updateThemeByName(name);
+  // static Future<void> updateByNameOrThrow(
+  //   String name,
+  // ) =>
+  //     _controller.updateThemeByName(name);
 
   /// updates the app theme by the index
   /// if index is out of range , it will do nothing
