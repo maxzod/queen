@@ -19,7 +19,7 @@ Future<Map<String, dynamic>?> loadJsonFileContent(String path) async {
   try {
     // *  parse it to string
     return json.decode(
-      /// *  load content
+      /// * load content
       await rootBundle.loadString(path),
     ) as Map<String, dynamic>?;
   } catch (_) {

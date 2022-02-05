@@ -1,7 +1,6 @@
 import 'package:url_launcher/url_launcher.dart';
 
-class Launch {
-  const Launch._();
+abstract class Launch {
   static Future url(String url) async {
     await launch(url);
   }
@@ -34,6 +33,5 @@ class Launch {
     await launch('google.navigation:q=$lat,$long');
   }
 
-  static Future<void> inGoogleMaps(String lat, String long) async =>
-      throw UnimplementedError();
+  static Future<void> inGoogleMaps(String lat, String long) async => throw UnimplementedError();
 }
