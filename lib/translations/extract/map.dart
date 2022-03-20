@@ -17,6 +17,7 @@ class MapData extends ExtractedData<Map<String, Object?>> {
     } else if (gender == Gender.female && data['female'] is String) {
       return data['female']! as String;
     }
+    return null;
   }
 
   @override
@@ -33,6 +34,7 @@ class MapData extends ExtractedData<Map<String, Object?>> {
         );
       }
     }
+    return null;
   }
 
   @override
@@ -40,5 +42,6 @@ class MapData extends ExtractedData<Map<String, Object?>> {
     if (data['this'] is String) {
       return data['this']! as String;
     }
+    return null;
   }
 }

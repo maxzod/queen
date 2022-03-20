@@ -3,9 +3,7 @@ library debug_bar;
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
-class _QueenBrandColors {
-  _QueenBrandColors._();
-
+abstract class _QueenBrandColors {
   static const darkMain = Color(0xFF000216);
   static const red = Color(0xFFff3a3c);
 }
@@ -39,18 +37,13 @@ class _DebugBarState extends State<DebugBar> {
     final TransController transController = Locators.find();
     // TODO :: show current and next
     // TODO ::: Nations.whatIsNext() => Locale
-    final _currentLangIndex =
-        transController.supportedLocales.indexOf(transController.locale);
-    final _isLastLang =
-        _currentLangIndex == transController.supportedLocales.length - 1;
-    final nextLang = transController
-        .supportedLocales[_isLastLang ? 0 : _currentLangIndex + 1];
+    final _currentLangIndex = transController.supportedLocales.indexOf(transController.locale);
+    final _isLastLang = _currentLangIndex == transController.supportedLocales.length - 1;
+    final nextLang = transController.supportedLocales[_isLastLang ? 0 : _currentLangIndex + 1];
     // TODO ::: Queen.whatIsNextTheme()
 
-    final _isLastIndex = themeController.currentIndex ==
-        themeController.config.themes.length - 1;
-    final nextTheme = themeController
-        .config.themes[_isLastIndex ? 0 : themeController.currentIndex + 1];
+    final _isLastIndex = themeController.currentIndex == themeController.config.themes.length - 1;
+    final nextTheme = themeController.config.themes[_isLastIndex ? 0 : themeController.currentIndex + 1];
     final _topRow = Row(
       children: <Widget>[
         IconButton(

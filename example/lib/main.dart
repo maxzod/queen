@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 import 'package:queen_example/config/theme.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'pages/theme_page.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await App.boot(
     themeConfig: AppThemeConfig(),
     nationsConfig: const NationsConfig(),
@@ -27,6 +29,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.current,
+      locale: Lang.current,
+      supportedLocales: Lang.supportedLocales,
+      builder: (context, child) => DevToolsView(child: child ?? const SizedBox()),
+      localizationsDelegates: const [
+        GlobalCupertinoLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

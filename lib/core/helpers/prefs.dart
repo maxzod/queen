@@ -6,20 +6,34 @@ import 'package:shared_preferences/shared_preferences.dart';
 abstract class Prefs {
   static SharedPreferences get _prefs => Locators.find();
 
-  static String getString(String key) => _prefs.getString(key) ?? '';
+  static String getString(
+    String key,
+  ) =>
+      _prefs.getString(key) ?? '';
 
-  static int getInt(String key) => _prefs.getInt(key) ?? -1;
-  static bool getBool(String key) => _prefs.getBool(key) ?? false;
+  static int getInt(
+    String key,
+  ) =>
+      _prefs.getInt(key) ?? -1;
+  static bool getBool(
+    String key,
+  ) =>
+      _prefs.getBool(key) ?? false;
 
-  static Future<void> setString(String key, String value) => _prefs.setString(key, value);
+  static Future<void> setString(
+    String key,
+    String value,
+  ) =>
+      _prefs.setString(key, value);
   static Future<void> setInt(
     String key,
     int value,
   ) =>
       _prefs.setInt(key, value);
-  // ignore: avoid_positional_boolean_parameters
+
   static Future<void> setBool(
     String key,
+    // ignore: avoid_positional_boolean_parameters
     bool value,
   ) =>
       _prefs.setBool(key, value);

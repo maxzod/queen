@@ -29,4 +29,5 @@ String? resolveCount(int count, Iterable<String> keys) {
     }
   }
   if (keys.contains('default')) return 'default';
+  return null;
 }
