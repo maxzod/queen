@@ -33,5 +33,6 @@ abstract class Launch {
     await launch('google.navigation:q=$lat,$long');
   }
 
-  static Future<void> inGoogleMaps(String lat, String long) async => throw UnimplementedError();
+  static Future<void> inGoogleMaps(String lat, String long) async =>
+      throw UnimplementedError();
 }

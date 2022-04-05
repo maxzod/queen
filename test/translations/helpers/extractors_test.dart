@@ -10,12 +10,10 @@ void main() {
         () {
       expect(resolveCount(150, ['1', '2', 'default']), equals('default'));
     });
-    test(
-        '''
+    test('''
         it support single count return the default if
          in the boundaries and there is not match
-         ''',
-        () {
+         ''', () {
       expect(resolveCount(10, ['1', '2', '10']), equals('10'));
     });
     test('it support more than one count in one key', () {

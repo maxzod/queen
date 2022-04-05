@@ -1,20 +1,26 @@
 import 'dart:convert';
 
-import 'package:queen/locators.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:queen/queen.dart';
 
 abstract class Prefs {
   static SharedPreferences get _prefs => Locators.find();
 
   static String getString(
+    String key, [
+    String defult = '',
+  ]) =>
+      _prefs.getString(key) ?? defult;
+
+  static String? getStringOrNull(
     String key,
   ) =>
-      _prefs.getString(key) ?? '';
+      _prefs.getString(key);
 
   static int getInt(
-    String key,
-  ) =>
-      _prefs.getInt(key) ?? -1;
+    String key, [
+    int defult = 0,
+  ]) =>
+      _prefs.getInt(key) ?? defult;
   static bool getBool(
     String key,
   ) =>
@@ -40,6 +46,16 @@ abstract class Prefs {
 
   /// clear the share preferences
   static Future<void> clear() => _prefs.clear();
+
+  static Future<void> remove(
+    String key,
+  ) =>
+      _prefs.remove(key);
+
+  static Future<void> removeMany(
+    List<String> keys,
+  ) =>
+      keys.loop(_prefs.remove);
 
   static Map<String, dynamic> getMap(
     String key,

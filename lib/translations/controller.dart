@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
-import 'loaders/nation_assets.dart';
+import 'package:queen/translations/loaders/nation_assets.dart';
 
 const _kPrefsKey = 'queen.nations.lang';
 
@@ -20,7 +20,7 @@ class TransController extends ChangeNotifier {
 
   /// set up Nations controller
   Future<void> boot() async {
-    final _savedLocale = App.prefs.getString(_kPrefsKey);
+    final _savedLocale = Prefs.getStringOrNull(_kPrefsKey);
 
     /// if there is a save locale and still supported use it
     if (_savedLocale != null && Locale(_savedLocale).isSupported) {
@@ -39,7 +39,7 @@ class TransController extends ChangeNotifier {
   /// * updates the current locale the restart the app (notify the root builder)
   Future<void> updateLocale(Locale locale) async {
     _currentLocale = locale;
-    await App.prefs.setString(_kPrefsKey, locale.toString());
+    await Prefs.setString(_kPrefsKey, locale.toString());
     await load(locale);
   }
 

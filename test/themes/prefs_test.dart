@@ -75,7 +75,7 @@ void main() {
     'it saves the theme to shared preferences',
     () async {
       await AppTheme.next();
-      expect(App.prefs.getInt('queen.theme.index'), 3);
+      expect(Prefs.getInt('queen.theme.index'), 3);
     },
   );
   testWidgets(

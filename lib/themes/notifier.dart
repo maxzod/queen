@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_readable/flutter_readable.dart';
-import 'package:queen/facade.dart';
 
+import '../core/helpers/prefs.dart';
 import 'models.dart';
 
 /// queen base theme controller
@@ -25,7 +25,7 @@ class ThemeController extends ChangeNotifier {
 
   /// set up the base controller
   Future<void> boot() async {
-    final lastKnownIndex = App.prefs.getInt('queen.theme.index') ?? 0;
+    final lastKnownIndex = Prefs.getInt('queen.theme.index');
 
     /// *
     _current = config.themes[lastKnownIndex];
@@ -36,7 +36,7 @@ class ThemeController extends ChangeNotifier {
   /// update the theme to one of the theme list by index
   Future<void> updateTo(QTheme theme) async {
     _current = theme;
-    await App.prefs.setInt('queen.theme.index', currentIndex);
+    await Prefs.setInt('queen.theme.index', currentIndex);
     notifyListeners();
   }
 
@@ -67,7 +67,7 @@ class ThemeController extends ChangeNotifier {
 
   Future<void> updateByIndexOrThrow(int index) async {
     _current = config.themes[index];
-    await App.prefs.setInt('queen.theme.index', index);
+    await Prefs.setInt('queen.theme.index', index);
     notifyListeners();
   }
 }

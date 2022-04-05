@@ -3,8 +3,6 @@ import 'package:queen/queen.dart';
 
 /// app facade
 abstract class App {
-  static SharedPreferences get prefs => Locators.find<SharedPreferences>();
-
   static Locale get locale {
     return Locators.find<TransController>().locale;
   }

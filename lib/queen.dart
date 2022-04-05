@@ -11,4 +11,3 @@ export 'facade.dart';
 export 'locators.dart';
 export 'themes.dart';
 export 'translations.dart';
-export 'validation.dart';

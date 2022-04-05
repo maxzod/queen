@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.current,
       locale: Lang.current,
       supportedLocales: Lang.supportedLocales,
-      builder: (context, child) => DevToolsView(child: child ?? const SizedBox()),
+      builder: (context, child) =>
+          DevToolsView(child: child ?? const SizedBox()),
       localizationsDelegates: const [
         GlobalCupertinoLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

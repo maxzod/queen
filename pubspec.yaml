@@ -16,12 +16,9 @@ dependencies:
   flutter_readable: ^0.0.3
   get_it: ^7.2.0
   nations_assets: ^0.0.4
-  queen_validators:
-    git:
-      url: https://github.com/FlutterQueen/validators.git
-      ref: 5ed46ea42aa22bbc5097a5925aa5fc5d2a59f2d9
-  shared_preferences: ^2.0.7
-  url_launcher: ^6.0.17
+  queen_validators: ^1.0.0
+  shared_preferences: ^2.0.13
+  url_launcher: ^6.0.20
 
 dev_dependencies:
   flutter_test:
