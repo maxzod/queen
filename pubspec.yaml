@@ -1,5 +1,5 @@
 name: queen
-description: collection of tools for the day to day work as a flutter
+description: opinionated framework built in to of flutter to develop faster , safer , less code
 version: 0.0.1
 publish_to: "none"
 

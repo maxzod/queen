@@ -7,7 +7,7 @@ export 'package:url_launcher/url_launcher.dart';
 
 export 'core.dart';
 export 'debug_bar.dart';
-export 'facade.dart';
+export 'facades/app.dart';
 export 'locators.dart';
 export 'themes.dart';
-export 'translations.dart';
+export 'translations/translations.dart';

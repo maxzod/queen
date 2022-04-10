@@ -56,33 +56,6 @@ class _QThemeBuilderState extends State<QueenBuilder> {
   Widget build(BuildContext context) {
     _forceRebuild(context);
     final child = widget.builder(context);
-    if (widget.enableDevtools) {
-      return MaterialApp(
-        theme: kQueenTheme,
-        debugShowCheckedModeBanner: false,
-        // home: DevToolsView(child: child),
-        home: DevToolsView(child: child),
-      );
-    }
     return child;
-  }
-}
-
-class DevToolsView extends StatelessWidget {
-  final Widget child;
-  const DevToolsView({
-    Key? key,
-    required this.child,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        const SafeArea(child: DebugBar()),
-        Expanded(child: child),
-      ],
-    );
   }
 }

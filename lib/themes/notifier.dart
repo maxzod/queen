@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_readable/flutter_readable.dart';
 
-import '../core/helpers/prefs.dart';
+import '../facades/prefs.dart';
 import 'models.dart';
 
 /// queen base theme controller

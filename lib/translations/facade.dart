@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:queen/locators.dart';
-import 'package:queen/translations.dart';
+import 'package:queen/translations/translations.dart';
 
 abstract class Lang {
   // shortcut to the controller

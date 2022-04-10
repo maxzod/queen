@@ -11,19 +11,24 @@ abstract class Locators {
     return instance;
   }
 
-  static void putLazy<T extends Object>(T Function() builder) {
-    _container.registerLazySingleton(builder);
-  }
+  static void putLazy<T extends Object>(
+    T Function() builder,
+  ) =>
+      _container.registerLazySingleton(builder);
 
-  static void putFactory(Object Function() factory) {
-    _container.registerFactory(factory);
-  }
+  static void putFactory(
+    Object Function() factory,
+  ) =>
+      _container.registerFactory(factory);
 
-  static T find<T extends Object>({String? tag}) {
-    return _container.get<T>(instanceName: tag);
-  }
+  static T find<T extends Object>({String? tag}) =>
+      _container.get<T>(instanceName: tag);
 
-  static Future<void> reset({bool dispose = true}) {
-    return _container.reset(dispose: dispose);
-  }
+  // static T findOrNull<T extends Object>({String? tag}) =>
+  // _container.get<T>(instanceName: tag);
+
+  static Future<void> reset({
+    bool dispose = true,
+  }) =>
+      _container.reset(dispose: dispose);
 }
