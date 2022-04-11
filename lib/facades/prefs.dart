@@ -4,33 +4,36 @@ import 'package:queen/queen.dart';
 
 abstract class Prefs {
   static SharedPreferences get _prefs => Locators.find();
-
-  static String getString(
-    String key, [
-    String defult = '',
-  ]) =>
-      _prefs.getString(key) ?? defult;
-
   static String? getStringOrNull(
     String key,
   ) =>
       _prefs.getString(key);
-
-  static int getInt(
-    String key, [
-    int defult = 0,
-  ]) =>
-      _prefs.getInt(key) ?? defult;
-  static bool getBool(
-    String key,
-  ) =>
-      _prefs.getBool(key) ?? false;
-
   static Future<void> setString(
     String key,
     String value,
   ) =>
       _prefs.setString(key, value);
+  static String getString(
+    String key, [
+    String defult = '',
+  ]) =>
+      getStringOrNull(key) ?? defult;
+  static int? getIntOrNull(
+    String key,
+  ) =>
+      _prefs.getInt(key);
+
+  static int getInt(
+    String key, [
+    int defult = 0,
+  ]) =>
+      getIntOrNull(key) ?? defult;
+
+  static bool getBool(
+    String key,
+  ) =>
+      _prefs.getBool(key) ?? false;
+
   static Future<void> setInt(
     String key,
     int value,
@@ -69,4 +72,24 @@ abstract class Prefs {
     Map<String, dynamic> map,
   ) =>
       setString(key, jsonEncode(map));
+
+  static Map<String, Object?> findMany(Iterable<String> keys) {
+    final result = <String, Object?>{};
+    for (final key in keys) {
+      result[key] = find(key);
+    }
+    return result;
+  }
+
+  // static Future<void> setMany(Map<String, Object> data) {
+  //   for (final key in data.keys) {
+  //     put(key, data[key]);
+  //   }
+  //   return result;
+  // }
+
+  static Object? find(
+    String key,
+  ) =>
+      _prefs.get(key);
 }

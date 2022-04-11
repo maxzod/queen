@@ -16,6 +16,9 @@ abstract class AppTheme {
   /// return current `QTheme`
   static QTheme get qTheme => _controller.currentQTheme;
 
+  static String get name => _controller.currentQTheme.name;
+  static String get id => _controller.currentQTheme.id;
+
   /// return list of supported QThemes
   static List<QTheme> get supportedThemes => _controller.config.themes;
 

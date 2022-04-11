@@ -41,21 +41,19 @@ class _QThemeBuilderState extends State<QueenBuilder> {
     super.dispose();
   }
 
-  void _forceRebuild(BuildContext context) {
-    void rebuild(Element element) {
-      if (element.debugDoingBuild) return;
-      element
-        ..markNeedsBuild()
-        ..visitChildren(rebuild);
-    }
-
-    (context as Element).visitChildren(rebuild);
+  void rebuild(
+    Element element,
+  ) {
+    if (element.debugDoingBuild) return;
+    element.markNeedsBuild();
+    element.visitChildren(rebuild);
   }
 
   @override
-  Widget build(BuildContext context) {
-    _forceRebuild(context);
-    final child = widget.builder(context);
-    return child;
+  Widget build(
+    BuildContext context,
+  ) {
+    (context as Element).visitChildren(rebuild);
+    return widget.builder(context);
   }
 }

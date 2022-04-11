@@ -7,7 +7,7 @@ abstract class App {
     return Locators.find<TransController>().locale;
   }
 
-  /// boots localization and theme
+  /// * boots localization and theme
   static Future<void> boot({
     NationsConfig nationsConfig = const NationsConfig(),
     ThemeConfig themeConfig = const ThemeConfig(),
@@ -18,8 +18,11 @@ abstract class App {
     Locators.put(_prefs);
     Locators.put(_themeController);
     Locators.put(_transController);
-    await _themeController.boot();
-    await _transController.boot();
+
+    await Future.wait([
+      _themeController.boot(),
+      _transController.boot(),
+    ]);
   }
 
   @protected
