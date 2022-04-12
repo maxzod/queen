@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
+import '../../notifiers/theme.dart';
+
 /// * listen and rebuild when
 /// - theme changes
 /// - locale changes

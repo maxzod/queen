@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:queen/themes.dart';
+import 'package:queen/queen.dart';
 
 class ThemePage extends StatelessWidget {
   const ThemePage({Key? key}) : super(key: key);

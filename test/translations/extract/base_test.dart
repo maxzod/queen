@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:queen/facades/app.dart';
-import 'package:queen/locators.dart';
+import 'package:queen/facades/locators.dart';
 import 'package:queen/translations/extract/base.dart';
 
 Future<void> main() async {

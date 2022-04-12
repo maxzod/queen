@@ -1,5 +1,5 @@
 /// * controller
-export 'controller.dart';
+export '../notifiers/lang.dart';
 export 'extensions/locale.dart';
 
 /// * extensions
@@ -12,9 +12,6 @@ export 'loaders/assets.dart';
 
 /// * loaders
 export 'loaders/base.dart';
-
-/// * model
-export 'models/config.dart';
 
 /// gender enum
 enum Gender {

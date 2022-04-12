@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:queen/locators.dart';
-import 'package:queen/themes.dart';
+import 'package:queen/queen.dart';
+
+import '../notifiers/theme.dart';
 
 /// facade for the theme features
 abstract class AppTheme {

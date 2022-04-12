@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
+import '../notifiers/theme.dart';
+
 /// app facade
 abstract class App {
   static Locale get locale {

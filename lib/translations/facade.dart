@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:queen/locators.dart';
+import 'package:queen/facades/locators.dart';
 import 'package:queen/translations/translations.dart';
 
 abstract class Lang {
