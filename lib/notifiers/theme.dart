@@ -25,7 +25,7 @@ class ThemeController extends ChangeNotifier {
     final lastKnownIndex = Prefs.getInt('queen.theme.index');
 
     /// *
-    _current = config.themes[lastKnownIndex];
+    _current = config.themes.atOrNull(lastKnownIndex) ?? config.themes.first;
   }
 
   /// update the theme to one of the theme list by index
