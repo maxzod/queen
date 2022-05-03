@@ -4,7 +4,6 @@ export 'extensions/locale.dart';
 
 /// * extensions
 export 'extensions/string.dart';
-export 'facade.dart';
 
 /// * helpers
 export 'helpers/string.dart';

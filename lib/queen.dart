@@ -16,7 +16,7 @@ export 'debug_bar.dart';
 
 /// facades
 export 'facades/app.dart';
-export 'facades/app.dart';
+export 'facades/lang.dart';
 export 'facades/locators.dart';
 export 'facades/navigation.dart';
 export 'facades/prefs.dart';
