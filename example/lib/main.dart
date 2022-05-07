@@ -9,7 +9,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await App.boot(
     themeConfig: AppThemeConfig(),
-    nationsConfig: const NationsConfig(),
+    nationsConfig: const LangConfig(),
   );
   runApp(
     QueenBuilder(

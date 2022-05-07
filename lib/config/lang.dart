@@ -1,10 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
 /// contains the localization config
-class NationsConfig {
+class LangConfig {
   /// coning base class
-  const NationsConfig({
+  const LangConfig({
     this.baseLoader = const AppAssetsLoader(),
     this.loaders = const <NationsLoader>[AppAssetsLoader()],
   });
@@ -31,7 +32,7 @@ class NationsConfig {
 
   /// not found builder
   /// to build the not found string
-  String notFound(String key) => 'null';
+  String notFound(String key) => kDebugMode ? 'null' : key;
 
   /// not found builder
   /// to build the not found string

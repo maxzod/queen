@@ -14,7 +14,7 @@ class TransController extends ChangeNotifier {
   // final delegate = _NationsDelegate();
 
   /// * falls back to arabic by default
-  NationsConfig config;
+  LangConfig config;
 
   Locale? _currentLocale;
 

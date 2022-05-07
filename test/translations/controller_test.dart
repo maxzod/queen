@@ -28,7 +28,7 @@ Future<void> main() async {
     // });
     test('it loads all the loaders and add them by loader name', () async {
       await App.boot(
-        nationsConfig: NationsConfig(
+        nationsConfig: LangConfig(
           loaders: [
             NationsTestLoader('test_1'),
             NationsTestLoader('test_2'),
@@ -47,7 +47,7 @@ Future<void> main() async {
     });
     test('it can override any value on any loader', () async {
       await App.boot(
-        nationsConfig: NationsConfig(
+        nationsConfig: LangConfig(
           loaders: [
             NationsTestLoader('test_package', {'foo_key': 'test_1'}),
           ],
@@ -65,7 +65,7 @@ Future<void> main() async {
     test('it will note deletes data when it override any value on any loader',
         () async {
       await App.boot(
-        nationsConfig: NationsConfig(
+        nationsConfig: LangConfig(
           loaders: [
             NationsTestLoader('test_package', {
               'foo_key': 'test_1',

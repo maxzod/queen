@@ -7,7 +7,7 @@ import 'lib.dart';
 void main() => test(
       'config always return null',
       () {
-        const config = NationsConfig();
+        const config = LangConfig();
         expect(config.notFound('key'), 'null');
         expect(config.notFoundPlural('key', 0, {}), 'null');
         expect(config.notFoundArgs('key', {}), 'null');
@@ -15,7 +15,7 @@ void main() => test(
       },
     );
 
-class NationsTestConfig extends NationsConfig {
+class NationsTestConfig extends LangConfig {
   @override
   List<NationsLoader> get loaders => [
         NationsTestLoader(),

@@ -1,5 +1,5 @@
 name: queen
-description: opinionated framework built in top of flutter to develop faster , simpler , less code more features projects
+description: opinionated framework built in top of flutter to deliver faster apps , readable ,simpler code
 version: 0.0.1
 publish_to: "none"
 
@@ -13,12 +13,12 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  flutter_readable: ^0.0.3
+  flutter_readable: ^0.0.5
   get_it: ^7.2.0
   nations_assets: ^0.0.4
   queen_validators: ^1.0.0
   shared_preferences: ^2.0.13
-  url_launcher: ^6.0.20
+  url_launcher: ^6.1.0
 
 dev_dependencies:
   flutter_test:
