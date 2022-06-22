@@ -12,6 +12,7 @@ class QTheme extends Equatable {
 
   /// the actual theme
   final ThemeData theme;
+
   const QTheme({
     required this.id,
     required this.theme,

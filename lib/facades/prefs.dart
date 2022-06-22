@@ -2,17 +2,16 @@ import 'dart:convert';
 
 import 'package:queen/queen.dart';
 
+// TODO :: add docs
 abstract class Prefs {
-  static SharedPreferences get _prefs => Locators.find();
-  static String? getStringOrNull(
-    String key,
-  ) =>
-      _prefs.getString(key);
+  static SharedPreferences get instance => Locators.find();
+
+  static String? getStringOrNull(String key) => instance.getString(key);
   static Future<void> setString(
     String key,
     String value,
   ) =>
-      _prefs.setString(key, value);
+      instance.setString(key, value);
   static String getString(
     String key, [
     String defult = '',
@@ -21,7 +20,7 @@ abstract class Prefs {
   static int? getIntOrNull(
     String key,
   ) =>
-      _prefs.getInt(key);
+      instance.getInt(key);
 
   static int getInt(
     String key, [
@@ -32,33 +31,20 @@ abstract class Prefs {
   static bool getBool(
     String key,
   ) =>
-      _prefs.getBool(key) ?? false;
+      instance.getBool(key) ?? false;
 
   static Future<void> setInt(
     String key,
     int value,
   ) =>
-      _prefs.setInt(key, value);
+      instance.setInt(key, value);
 
   static Future<void> setBool(
     String key,
     // ignore: avoid_positional_boolean_parameters
     bool value,
   ) =>
-      _prefs.setBool(key, value);
-
-  /// clear the share preferences
-  static Future<void> clear() => _prefs.clear();
-
-  static Future<void> remove(
-    String key,
-  ) =>
-      _prefs.remove(key);
-
-  static Future<void> removeMany(
-    List<String> keys,
-  ) =>
-      keys.loop(_prefs.remove);
+      instance.setBool(key, value);
 
   static Map<String, dynamic> getMap(
     String key,
@@ -91,5 +77,34 @@ abstract class Prefs {
   static Object? find(
     String key,
   ) =>
-      _prefs.get(key);
+      instance.get(key);
+
+  /// clear the share preferences
+  static Future<void> clear() => instance.clear();
+
+  static Future<void> remove(
+    String key,
+  ) =>
+      instance.remove(key);
+
+  static Future<void> removeMany(
+    List<String> keys,
+  ) =>
+      keys.loop(instance.remove);
+
+  static DateTime? getDateOrNull(
+    String key,
+  ) =>
+      DateTime.tryParse(getString(key));
+
+  static DateTime getDate(
+    String key,
+  ) =>
+      getDateOrNull(key) ?? DateTime.now();
+
+  static Future<void> setDate(
+    String key,
+    DateTime value,
+  ) =>
+      setString(key, value.toString());
 }

@@ -21,10 +21,11 @@ class QueenBuilder extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _QThemeBuilderState createState() => _QThemeBuilderState();
+  QThemeBuilderState createState() => QThemeBuilderState._();
 }
 
-class _QThemeBuilderState extends State<QueenBuilder> {
+class QThemeBuilderState extends State<QueenBuilder> {
+  QThemeBuilderState._();
   late VoidCallback _changeListener;
   @override
   void initState() {

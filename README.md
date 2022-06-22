@@ -1,12 +1,6 @@
 # **`Q U E E N 👑`**
 
-this package setup and boot the entire queen ecosystem together.
-
-## included projects
-
-- theming
-- validation (`queen_validators`)
-- localization (`nations`)
+this package setup and boot the entire queen ecosystem .
 
 ## `LH` CLI
 

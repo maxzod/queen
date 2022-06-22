@@ -9,22 +9,32 @@ const _kPrefsKey = 'queen.nations.lang';
 
 /// nations base class
 class TransController extends ChangeNotifier {
-  TransController({required this.config});
+  TransController({
+    required this.config,
+  });
 
-  // final delegate = _NationsDelegate();
+  final LangConfig config;
 
-  /// * falls back to arabic by default
-  LangConfig config;
+  late Locale _currentLocale;
 
-  Locale? _currentLocale;
+  final Map<String, Object?> _translations = {};
+
+  /// * get the current locale
+  Locale get locale => _currentLocale;
+
+  /// * return the supported locales list from the config
+  List<Locale> get supportedLocales => config.supportedLocales;
+
+  /// return the loaded translations
+  Map<String, Object?> get translations => _translations;
 
   /// set up Nations controller
   Future<void> boot() async {
-    final _savedLocale = Prefs.getStringOrNull(_kPrefsKey);
+    final _savedLocaleKey = Prefs.getStringOrNull(_kPrefsKey);
 
     /// if there is a save locale and still supported use it
-    if (_savedLocale != null && Locale(_savedLocale).isSupported) {
-      _currentLocale = Locale(_savedLocale);
+    if (_savedLocaleKey != null && Locale(_savedLocaleKey).isSupported) {
+      _currentLocale = Locale(_savedLocaleKey);
 
       /// if no check if the device locale is supported or not
     } else if (window.locale.isSupported) {
@@ -42,17 +52,6 @@ class TransController extends ChangeNotifier {
     await Prefs.setString(_kPrefsKey, locale.toString());
     await load(locale);
   }
-
-  /// * get the current locale
-  Locale get locale => _currentLocale ?? config.fallbackLocale;
-
-  /// * return the supported locales list from the config
-  List<Locale> get supportedLocales => config.supportedLocales;
-
-  final _translations = <String, Object?>{};
-
-  /// return the loaded translations
-  Map<String, Object?> get translations => _translations;
 
   /// used by this class only to load the translations when locale changes
   @protected

@@ -6,26 +6,31 @@ import 'package:queen/queen.dart';
 class LangConfig {
   /// coning base class
   const LangConfig({
+    this.fallbackLocale = const Locale('ar'),
     this.baseLoader = const AppAssetsLoader(),
-    this.loaders = const <NationsLoader>[AppAssetsLoader()],
+    this.supportedLocales = const [
+      Locale('ar'),
+      Locale('en'),
+      Locale('es'),
+      Locale('tur'),
+    ],
+    this.defaultGender = Gender.male,
+    this.loaders = const <NationsLoader>[
+      AppAssetsLoader(),
+    ],
   });
 
   /// which locale to use in case of failure
-  Locale get fallbackLocale => const Locale('ar');
+  final Locale fallbackLocale;
 
   /// loads the app translations
   final NationsLoader baseLoader;
 
   /// list of the supported locales
-  List<Locale> get supportedLocales => const [
-        Locale('ar'),
-        Locale('en'),
-        Locale('es'),
-        Locale('tur'),
-      ];
+  final List<Locale> supportedLocales;
 
   /// the default gender
-  Gender get defaultGender => Gender.male;
+  final Gender defaultGender;
 
   /// the loaders
   final List<NationsLoader> loaders;
