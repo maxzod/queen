@@ -8,6 +8,7 @@ void main() {
   setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
     await App.boot(nationsConfig: NotFoundTestConfig());
+    await AppLang.update(const Locale('ar'));
   });
   tearDownAll(() {
     Locators.clear();
