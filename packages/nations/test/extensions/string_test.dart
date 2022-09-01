@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nations/nations.dart';
 import 'package:queen/queen.dart';
 
 import '../config_test.dart';
@@ -10,8 +9,8 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     await App.boot(nationsConfig: NotFoundTestConfig());
   });
-  tearDownAll(() async {
-    await Locators.reset();
+  tearDownAll(() {
+    Locators.clear();
   });
   group('not found tests', () {
     test('it return the not found def value if is null', () {

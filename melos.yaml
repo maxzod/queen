@@ -13,3 +13,12 @@ scripts:
     exec: dart analyze .
   format:
     exec: flutter format .
+  test:
+    run: |
+      melos exec -c 1 --fail-fast -- \
+        "flutter test"
+    select-package:
+      dir-exists:
+        - test
+      ignore:
+        - "*example*"

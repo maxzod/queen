@@ -3,7 +3,7 @@ import 'package:flutter_readable/flutter_readable.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  const _rtlLocales = <Locale>[
+  const rtlLocales = <Locale>[
     Locale('ar'), // Arabic
     Locale('fa'), // Farsi
     Locale('he'), // Hebrew
@@ -20,12 +20,12 @@ void main() {
       expect(const Locale('en', 'US').isRTL, isFalse);
     });
     test('it return True if the the locale is RTL', () {
-      for (final locale in _rtlLocales) {
+      for (final locale in rtlLocales) {
         expect(locale.isRTL, isTrue);
       }
     });
     test('it should Return false if the locale is not RTL', () {
-      for (final locale in _rtlLocales) {
+      for (final locale in rtlLocales) {
         expect(locale.isLTR, isFalse);
       }
     });
@@ -35,7 +35,7 @@ void main() {
       expect(const Locale('EN').isLTR, isTrue);
     });
     test('it should return false if the the locale is RTL', () {
-      for (final locale in _rtlLocales) {
+      for (final locale in rtlLocales) {
         expect(locale.isLTR, isFalse);
       }
     });
@@ -51,7 +51,7 @@ void main() {
       expect(const Locale('AR').direction, TextDirection.rtl);
     });
     test('it should return `TextDirection.rtl` if the the locale is RTL', () {
-      for (final locale in _rtlLocales) {
+      for (final locale in rtlLocales) {
         expect(locale.direction, TextDirection.rtl);
       }
     });

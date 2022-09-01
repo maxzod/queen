@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:queen/queen.dart';
-import 'package:queen_thems/themes.dart';
+import 'package:queen/queen.dart' hide find;
 
 class TestApp extends StatelessWidget {
   const TestApp({Key? key}) : super(key: key);

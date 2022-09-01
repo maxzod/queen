@@ -2,18 +2,16 @@
 library nations;
 
 /// * controller
-// export 'src/controller.dart';
 export 'src/extensions/locale.dart';
-export 'src/lang_config.dart';
-export 'src/facade.dart';
-export 'src/lang_notifier.dart';
 
 /// * extensions
-// export 'src/extensions/nations_base.dart';
 export 'src/extensions/string.dart';
+export 'src/facade.dart';
 
 /// * helpers
 export 'src/helpers/string.dart';
+export 'src/lang_config.dart';
+export 'src/lang_notifier.dart';
 export 'src/loaders/assets.dart';
 
 /// * loaders

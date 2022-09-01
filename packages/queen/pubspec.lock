@@ -98,13 +98,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  get_it:
-    dependency: "direct main"
-    description:
-      name: get_it
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "7.2.0"
   intl:
     dependency: transitive
     description:
@@ -217,10 +210,10 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
-  queen_thems:
+  queen_themes:
     dependency: "direct main"
     description:
-      path: "../queen_thems"
+      path: "../queen_themes"
       relative: true
     source: path
     version: "0.0.1"

@@ -14,7 +14,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_readable: ^0.0.5
-  get_it: ^7.2.0
   nations_assets: ^0.0.4
   queen_validators: ^1.0.0
   shared_preferences: ^2.0.15
@@ -23,8 +22,8 @@ dependencies:
     path: ../nations
   locators:
     path: ../locators
-  queen_thems:
-    path: ../queen_thems
+  queen_themes:
+    path: ../queen_themes
 dev_dependencies:
   flutter_test:
     sdk: flutter

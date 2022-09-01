@@ -1,13 +1,14 @@
-# melos_managed_dependency_overrides: flutter_readable,readable,locators,queen,queen_validators,queen_thems
+# melos_managed_dependency_overrides: flutter_readable,readable,locators,queen,queen_validators,queen_themes,platform
 dependency_overrides:
   flutter_readable:
     path: ..\\flutter_readable
   locators:
     path: ..\\locators
+  platform: 3.1.0
   queen:
     path: ..\\queen
-  queen_thems:
-    path: ..\\queen_thems
+  queen_themes:
+    path: ..\\queen_themes
   queen_validators:
     path: ..\\validators
   readable:

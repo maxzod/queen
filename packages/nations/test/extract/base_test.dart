@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/src/extract/base.dart';
-import 'package:queen/facades/app.dart';
-import 'package:queen/facades/locators.dart';
+import 'package:queen/queen.dart';
 
 Future<void> main() async {
   await App.boot();
@@ -9,7 +8,7 @@ Future<void> main() async {
     TestWidgetsFlutterBinding.ensureInitialized();
   });
   tearDownAll(() async {
-    await Locators.reset();
+    Locators.clear();
   });
 
   test('it return not found if value does not exist', () {

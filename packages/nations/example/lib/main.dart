@@ -1,8 +1,6 @@
+import 'package:example/page2.dart';
 import 'package:flutter/material.dart';
-
 import 'package:nations/nations.dart';
-
-import 'page2.dart';
 
 Future<void> main() async {
   // TODO :: (2)
@@ -36,16 +34,17 @@ class MySc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void _updateLocale() {
+    void updateLocale() {
       //  TODO ::(5) update the locale
       // Nations.updateLocale(Locale(
       //   Nations.locale.languageCode == 'ar' ? 'en' : 'ar',
       // ));
       Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const PageTwo(),
-          ));
+        context,
+        MaterialPageRoute(
+          builder: (context) => const PageTwo(),
+        ),
+      );
     }
 
     return Scaffold(
@@ -54,7 +53,7 @@ class MySc extends StatelessWidget {
         child: Text('Go To Page 2'),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _updateLocale,
+        onPressed: updateLocale,
         child: const Icon(Icons.translate),
       ),
     );

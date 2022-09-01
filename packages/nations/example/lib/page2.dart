@@ -3,9 +3,11 @@ import 'package:nations/nations.dart';
 
 void _updateLocale(BuildContext context) {
   //  TODO ::(5) update the locale
-  AppLang.update(Locale(
-    AppLang.current.languageCode == 'ar' ? 'en' : 'ar',
-  ));
+  AppLang.update(
+    Locale(
+      AppLang.current.languageCode == 'ar' ? 'en' : 'ar',
+    ),
+  );
 
   AppLang.update(const Locale('ar'));
 }
@@ -50,12 +52,12 @@ class _PageTwoState extends State<PageTwo> {
 
               /// *
               Text('gender'.gender),
-              Text('welcome : ' + 'person'.gender),
+              Text('welcome : ${'person'.gender}'),
               Text('Un_Known_Key_With_Gender'.trMale),
 
               /// *
               Text('validation.email'.tr),
-              Text('validation.age.to_young'.tr + '    55'),
+              Text('${'validation.age.to_young'.tr}    55'),
               Text('validation.age.old_enough'.tr),
               Text('validation.age.very_old'.tr),
               Text('person'.trMale),

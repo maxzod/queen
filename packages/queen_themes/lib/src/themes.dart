@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
-import 'package:queen_thems/config.dart';
-import 'package:queen_thems/theme.dart';
 
 /// facade for the theme features
 abstract class AppTheme {

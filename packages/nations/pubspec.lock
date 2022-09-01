@@ -98,13 +98,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  get_it:
-    dependency: transitive
-    description:
-      name: get_it
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "7.2.0"
   intl:
     dependency: transitive
     description:
@@ -190,12 +183,12 @@ packages:
     source: hosted
     version: "2.0.3"
   platform:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: platform
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.2"
+    version: "3.1.0"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -217,10 +210,10 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
-  queen_thems:
+  queen_themes:
     dependency: "direct overridden"
     description:
-      path: "../queen_thems"
+      path: "../queen_themes"
       relative: true
     source: path
     version: "0.0.1"
@@ -239,7 +232,7 @@ packages:
     source: path
     version: "0.0.5"
   shared_preferences:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: shared_preferences
       url: "https://pub.dartlang.org"

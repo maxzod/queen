@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
-import 'package:queen_thems/config.dart';
 
 /// queen base theme controller
 class ThemeController extends ChangeNotifier {

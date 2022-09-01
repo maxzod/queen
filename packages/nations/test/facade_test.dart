@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nations/nations.dart';
 import 'package:queen/queen.dart';
 
 Future<void> main() async {
@@ -8,8 +7,8 @@ Future<void> main() async {
     TestWidgetsFlutterBinding.ensureInitialized();
     await App.boot();
   });
-  tearDown(() async {
-    await Locators.reset();
+  tearDown(() {
+    Locators.clear();
   });
   test('it return the current locale', () async {
     expect(

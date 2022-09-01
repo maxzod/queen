@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:queen/queen.dart';
-import 'package:queen_thems/themes.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

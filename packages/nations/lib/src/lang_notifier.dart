@@ -1,10 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_readable/flutter_readable.dart';
-import 'package:nations/src/lang_config.dart';
 import 'package:nations/src/loaders/nation_assets.dart';
-import 'package:nations/src/translations.dart';
 import 'package:queen/queen.dart';
 
 const _kPrefsKey = 'queen.nations.lang';

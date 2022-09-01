@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/nations.dart';
-import 'package:nations/src/lang_config.dart';
 import 'package:nations/src/loaders/nation_assets.dart';
 
 import 'lib.dart';

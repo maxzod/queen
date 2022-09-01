@@ -4,7 +4,7 @@ import 'package:queen/queen.dart';
 /// app facade
 abstract class App {
   /// *  return the current app locale
-  static Locale get locale => Locators.find<TransController>().locale;
+  static Locale get locale => find<TransController>().locale;
 
   /// * setup needed controllers for the app
   /// * boots localization and theme
@@ -35,6 +35,6 @@ abstract class App {
   @visibleForTesting
   static Future<void> dispose() async {
     // remove the controllers from the container
-    await Locators.reset();
+    Locators.clear();
   }
 }

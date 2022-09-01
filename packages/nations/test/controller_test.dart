@@ -1,32 +1,36 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nations/nations.dart';
 import 'package:queen/queen.dart';
 
 import 'lib.dart';
 
 Future<void> main() async {
-  setUpAll(() async {
+  setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
+  });
+  setUp(() async {
     await App.boot();
   });
-  tearDown(() async {
-    await Locators.reset();
+  tearDown(() {
+    Locators.clear();
   });
 
   test('it loads saved locale form prefs if exist', () async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('queen.nations.lang', 'ar');
-    final current = App.locale;
-    expect(current, const Locale('ar'));
+    Locators.clear();
+    await App.boot();
+
+    SharedPreferences.setMockInitialValues({
+      'queen.nations.lang': 'ar',
+    });
+    expect(App.locale, const Locale('ar'));
   });
 
   group('load method', () {
-    // test('it always load the nations assets', () async {
-    //   final controller = Locators.find<TransController>();
-    //   controller.load(const Locale('en'));
-    //   expect(controller.translations.containsKey('gender'), isTrue);
-    // });
+    test('it always load the nations assets', () async {
+      final controller = Locators.find<TransController>();
+      controller.load(const Locale('en'));
+      expect(controller.translations.containsKey('gender'), isTrue);
+    });
     test('it loads all the loaders and add them by loader name', () async {
       await App.boot(
         nationsConfig: LangConfig(
