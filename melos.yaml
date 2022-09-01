@@ -11,3 +11,5 @@ command:
 scripts:
   analyze:
     exec: dart analyze .
+  format:
+    exec: flutter format .
