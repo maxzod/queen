@@ -2,8 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:queen/queen.dart';
 
-import 'lib.dart';
-
 Future<void> main() async {
   setUpAll(() => TestWidgetsFlutterBinding.ensureInitialized());
   setUp(() async => App.boot());
