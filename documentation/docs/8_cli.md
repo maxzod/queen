@@ -1,6 +1,6 @@
 ---
-title: lighthouse(CLI)
-sidebar_position: 1
+title: lighthouse (CLI)
+sidebar_position: 8
 ---
 
 # Install the CLI
@@ -74,7 +74,7 @@ this command will validate your localization assets from `assets/lang` in your p
 - validation lighthouse will check if you added an empty value or missed a key in any language .
 - strong type checking to your translations keys no more key not found 🎁.
 - IDE support to see the value of this key in different languages.
-  - ![Tr getter](./../assets/snippets/tr_getter.png)
+  - ![Tr getter](./assets/snippets/tr_getter.png)
 
 ## **`tr:validate`**
 
