@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       // TODO :: (3) pass these parameters
-      locale: Lang.current,
+      locale: AppLang.current,
       // localizationsDelegates: Nations.delegates,
-      supportedLocales: Lang.supportedLocales,
+      supportedLocales: AppLang.supportedLocales,
       builder: (context, child) => child!,
 
       /// end ot Nations params

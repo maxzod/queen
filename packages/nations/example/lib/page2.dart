@@ -3,11 +3,11 @@ import 'package:nations/nations.dart';
 
 void _updateLocale(BuildContext context) {
   //  TODO ::(5) update the locale
-  Lang.update(Locale(
-    Lang.current.languageCode == 'ar' ? 'en' : 'ar',
+  AppLang.update(Locale(
+    AppLang.current.languageCode == 'ar' ? 'en' : 'ar',
   ));
 
-  Lang.update(const Locale('ar'));
+  AppLang.update(const Locale('ar'));
 }
 
 class PageTwo extends StatefulWidget {
@@ -40,7 +40,7 @@ class _PageTwoState extends State<PageTwo> {
                 },
               ),
 
-              Text(Lang.current.toString()),
+              Text(AppLang.current.toString()),
 
               // TODO ::(4) translate
 

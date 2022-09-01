@@ -1,9 +1,7 @@
 import 'package:flutter_readable/flutter_readable.dart';
-import 'package:locators/queen_container.dart';
+import 'package:locators/locators.dart';
 import 'package:nations/nations.dart';
 import 'package:nations/src/helpers/extractors.dart';
-import 'package:nations/src/lang_notifier.dart';
-import 'package:nations/src/translations.dart';
 
 part 'string.dart';
 part 'map.dart';

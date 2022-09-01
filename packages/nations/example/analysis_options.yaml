@@ -1,4 +1,1 @@
-include: package:flutter_lints/flutter.yaml
-analyzer:
-  errors:
-    todo: ignore
+include: package:lint/analysis_options.yaml

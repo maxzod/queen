@@ -13,12 +13,12 @@ Future<void> main() async {
   });
   test('it return the current locale', () async {
     expect(
-      Lang.current,
+      AppLang.current,
       const Locale('ar'),
     );
-    await Lang.update(const Locale('en'));
+    await AppLang.update(const Locale('en'));
     expect(
-      Lang.current,
+      AppLang.current,
       const Locale('en'),
     );
   });

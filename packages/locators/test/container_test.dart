@@ -1,4 +1,4 @@
-import 'package:locators/queen_container.dart';
+import 'package:locators/locators.dart';
 import 'package:test/test.dart';
 
 class TestInstance extends DepndancyManager {

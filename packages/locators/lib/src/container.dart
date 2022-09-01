@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:locators/managers.dart';
+import 'package:locators/locators.dart';
 
 abstract class Locators {
   @protected
@@ -108,7 +108,7 @@ cant put in the container type already exists
  - use force
 ''';
     }
-    
+
     container[key] = manager;
   }
 }

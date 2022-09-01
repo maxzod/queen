@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:locators/queen_container.dart';
+import 'package:locators/locators.dart';
 import 'package:nations/nations.dart';
 import 'package:nations/src/extract/base.dart';
 
@@ -9,33 +9,31 @@ extension NationsTrans on String {
   /// * if there is error will use the config `notFound`
   String get tr =>
       ExtractedData.parse(this).text() ??
-      Locators.find<TransController>().config.notFound(this);
+      find<TransController>().config.notFound(this);
 
   /// * translate a text **AND** use the default gender
   /// * if there is error will use the config `notFoundGender`
   String get gender =>
       ExtractedData.parse(this).toGender() ??
-      Locators.find<TransController>().config.notFoundGender(this);
+      find<TransController>().config.notFoundGender(this);
 
   /// * translate a text **AND** use the `male` gender
   /// * if there is error will use the config `notFoundGender`
   String get trMale =>
       ExtractedData.parse(this).toGender(Gender.male) ??
-      Locators.find<TransController>().config.notFoundGender(this, Gender.male);
+      find<TransController>().config.notFoundGender(this, Gender.male);
 
   /// * translate a text **AND** use the `female` gender
   /// * if there is error will use the config `notFoundGender`
   String get trFemale =>
       ExtractedData.parse(this).toGender(Gender.female) ??
-      Locators.find<TransController>()
-          .config
-          .notFoundGender(this, Gender.female);
+      find<TransController>().config.notFoundGender(this, Gender.female);
 
   /// * translate a text and replace the args with provided data
   /// * if there is error will use the config `notFoundArgs`
   String args(Map<String, Object> args) =>
       ExtractedData.parse(this).args(args) ??
-      Locators.find<TransController>().config.notFoundArgs(this, args);
+      find<TransController>().config.notFoundArgs(this, args);
 
   ///  * translate a text and set the right word base on the provided count
   /// * if there is error will use the config `notFoundPlural`
@@ -44,10 +42,12 @@ extension NationsTrans on String {
     Map<String, Object> args = const {},
   ]) =>
       ExtractedData.parse(this).plural(count, args) ??
-      Locators.find<TransController>().config.notFoundPlural(this, count, args);
+      find<TransController>().config.notFoundPlural(this, count, args);
 
   /// covert the number to locale format
   /// if none locale givin it will use the current locale
-  String toLocale([Locale? locale]) =>
-      numberToLocale(this, locale ?? Locators.find<TransController>().locale);
+  String toLocale([
+    Locale? locale,
+  ]) =>
+      numberToLocale(this, locale ?? find<TransController>().locale);
 }

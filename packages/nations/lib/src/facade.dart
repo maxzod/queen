@@ -1,10 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:locators/container.dart';
+import 'package:locators/locators.dart';
 import 'package:nations/src/lang_notifier.dart';
 
-abstract class Lang {
+/// facilitate controlloing the localization process
+abstract class AppLang {
   // shortcut to the controller
   static TransController get _controller => Locators.find<TransController>();
 
@@ -32,7 +33,4 @@ abstract class Lang {
     Locale locale,
   ) =>
       _controller.updateLocale(locale);
-
-  // static bool get isRtl => isRtlLanguage(name);
-  // static bool get isLtr => isLtrLanguage(name);
 }

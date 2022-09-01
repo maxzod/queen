@@ -1,4 +1,4 @@
-import 'package:locators/managers.dart';
+import 'package:locators/locators.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 

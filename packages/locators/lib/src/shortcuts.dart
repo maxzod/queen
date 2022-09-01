@@ -1,4 +1,4 @@
-import 'package:locators/container.dart';
+import 'package:locators/locators.dart';
 
 T find<T>({
   String? tag,

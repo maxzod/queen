@@ -5,7 +5,7 @@ library nations;
 // export 'src/controller.dart';
 export 'src/extensions/locale.dart';
 export 'src/lang_config.dart';
-export 'src/lang_facade.dart';
+export 'src/facade.dart';
 export 'src/lang_notifier.dart';
 
 /// * extensions
