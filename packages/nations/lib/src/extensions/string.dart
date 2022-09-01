@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:locators/queen_container.dart';
 import 'package:nations/nations.dart';
 import 'package:nations/src/extract/base.dart';
-import 'package:nations/src/lang_notifier.dart';
-import 'package:nations/src/translations.dart';
 
 /// string translation extension
 extension NationsTrans on String {

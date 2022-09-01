@@ -3,7 +3,6 @@ repository: https://github.com/FlutterQueen/queen
 
 packages:
   - packages/**
-  - queen/**
 
 command:
   bootstrap:
