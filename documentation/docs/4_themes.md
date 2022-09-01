@@ -1,6 +1,6 @@
 ---
-title: themes
-sidebar_position: 3
+title: Themes
+sidebar_position: 4
 ---
 
 # Get Started

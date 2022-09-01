@@ -1,6 +1,6 @@
 ---
-title: localization
-sidebar_position: 1
+title: Localization
+sidebar_position: 3
 ---
 
 ## Introduction
