@@ -1,6 +1,3 @@
 {
-  "cSpell.words": ["abcdefgh"],
-  "editor.tokenColorCustomizations": {
-     "textMateRules": []
-  }
+  "dart.runPubGetOnPubspecChanges": false
 }

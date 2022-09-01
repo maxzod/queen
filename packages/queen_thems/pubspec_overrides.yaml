@@ -1,0 +1,14 @@
+# melos_managed_dependency_overrides: locators,flutter_readable,queen,queen_validators,readable,nations
+dependency_overrides:
+  flutter_readable:
+    path: ..\\flutter_readable
+  locators:
+    path: ..\\locators
+  nations:
+    path: ..\\nations
+  queen:
+    path: ..\\queen
+  queen_validators:
+    path: ..\\validators
+  readable:
+    path: ..\\readable
