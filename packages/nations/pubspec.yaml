@@ -13,10 +13,7 @@ dependencies:
     sdk: flutter
   flutter_readable: ^0.0.2
   nations_assets: ^0.0.1
-  locators:
-    path: ../locators
-  queen:
-    path: ../queen
+  queen: 0.0.1
 
 dependency_overrides:
   platform: 3.1.0

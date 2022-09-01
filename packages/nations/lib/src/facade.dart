@@ -1,13 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:locators/locators.dart';
-import 'package:nations/src/lang_notifier.dart';
+import 'package:queen/queen.dart';
 
 /// facilitate controlloing the localization process
 abstract class AppLang {
   // shortcut to the controller
-  static TransController get _controller => Locators.find<TransController>();
+  static TransController get _controller => find<TransController>();
 
   /// * return the current locale
   static Locale get current => _controller.locale;

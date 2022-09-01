@@ -10,10 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   equatable: ^2.0.3
-  locators:
-    path: ../locators
-  queen:
-    path: ../queen
+  queen: 0.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

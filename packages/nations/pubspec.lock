@@ -120,7 +120,7 @@ packages:
     source: hosted
     version: "1.7.2"
   locators:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
       path: "../locators"
       relative: true
