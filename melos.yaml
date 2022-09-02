@@ -30,9 +30,4 @@ scripts:
   test_coverage:
     run: |
       melos exec -c 1 --fail-fast -- \
-        "flutter test --coverage"
-    select-package:
-      dir-exists:
-        - test
-      ignore:
-        - "*example*"
+        "flutter test --coverage "
