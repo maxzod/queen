@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:queen/queen.dart';
+import 'package:qthemes/qthemes.dart';
 
 class TestConfig extends ThemeConfig {
   @override
@@ -48,7 +49,7 @@ void main() {
   setUp(() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
-    await App.boot(themeConfig: TestConfig());
+    // await App.boot(themeConfig: TestConfig());
   });
   tearDown(() async {
     await App.dispose();

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:qthemes/qthemes.dart';
 import 'package:queen/queen.dart';
 
 /// facade for the theme features
 abstract class AppTheme {
   /// shortcut for the rest of the functions
-  static ThemeController get _controller => Locators.find<ThemeController>();
+  static ThemeController get _controller => find<ThemeController>();
 
   /// return current app theme
   static ThemeData get current => _controller.currentTheme;

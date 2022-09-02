@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:queen/queen.dart';
 
 // TODO :: add docs
+// TODO :: should be in seprate package
 abstract class Prefs {
   static SharedPreferences get instance => Locators.find();
 

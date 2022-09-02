@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:queen/queen.dart';
+import 'package:qthemes/qthemes.dart';
+import 'package:queen/queen.dart' show Prefs, RIterable;
 
 /// queen base theme controller
 class ThemeController extends ChangeNotifier {

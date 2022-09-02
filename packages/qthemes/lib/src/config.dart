@@ -26,21 +26,3 @@ class QTheme extends Equatable {
         theme,
       ];
 }
-
-class ThemeConfig {
-  const ThemeConfig();
-
-  /// * List of available thames
-  List<QTheme> get themes => [
-        QTheme(
-          id: 'dark',
-          name: 'Dark',
-          theme: ThemeData.dark(),
-        ),
-        QTheme(
-          id: 'light',
-          name: 'Light',
-          theme: ThemeData.light(),
-        ),
-      ];
-}

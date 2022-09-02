@@ -210,12 +210,19 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
+  qcore:
+    dependency: "direct main"
+    description:
+      path: "../qcore"
+      relative: true
+    source: path
+    version: "1.0.0"
   queen_themes:
     dependency: "direct main"
     description:
-      path: "../queen_themes"
-      relative: true
-    source: path
+      name: queen_themes
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.0.1"
   queen_validators:
     dependency: "direct main"
