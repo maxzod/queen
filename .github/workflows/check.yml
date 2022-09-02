@@ -25,22 +25,22 @@ jobs:
       - name: bootstrap
         run: melos bs
 
-      # - name: "Analyze"
-      #   uses: invertase/github-action-dart-analyzer@v1
-      #   with:
-      #     fatal-infos: true
-      #     fatal-warnings: true
-  # test:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2.3.4
-  #     - uses: subosito/flutter-action@v1.5.3
+      - name: "Analyze"
+        uses: invertase/github-action-dart-analyzer@v1
+        with:
+          fatal-infos: true
+          fatal-warnings: true
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: subosito/flutter-action@v1.5.3
 
-  #     - name: Activate melos latest and bootstrap
-  #       run: flutter pub global activate melos && melos bs
+      - name: Activate melos latest and bootstrap
+        run: flutter pub global activate melos && melos bs
 
-  #     - name: check lint
-  #       run: melos run test_coverage
+      - name: check lint
+        run: melos run test_coverage
 
-  #     - name: Check Code Coverage
-  #       uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
+      - name: Check Code Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
