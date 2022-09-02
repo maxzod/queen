@@ -29,5 +29,5 @@ scripts:
 
   test_coverage:
     run: |
-      melos exec -c 1 --fail-fast -- \
+      melos exec -c 1 --dir-exists="test" --fail-fast -- \
         "flutter test --coverage "
