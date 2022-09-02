@@ -1,13 +1,13 @@
 #The name of your workflow.
-name: coverage
+name: check
 # Trigger the workflow on push or pull request
 on:
   push:
     branches:
-      - main
+      - master
       - dev
   pull_request:
-    branches: [main, dev]
+    branches: [master, dev]
 
 jobs:
   lint:
