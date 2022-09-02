@@ -16,15 +16,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
       - uses: subosito/flutter-action@v2
-
-      - name: "Install Tools"
-        run: ./.github/workflows/scripts/install-tools.sh
-
-      - name: "Analyze"
-        uses: invertase/github-action-dart-analyzer@v1
         with:
-          fatal-infos: true
-          fatal-warnings: true
+          channel: "stable"
+
+      - name: Activate melos latest
+        run: flutter pub global activate melos
+
+      - name: bootstrap
+        run: melos bs
+
+      # - name: "Analyze"
+      #   uses: invertase/github-action-dart-analyzer@v1
+      #   with:
+      #     fatal-infos: true
+      #     fatal-warnings: true
   # test:
   #   runs-on: ubuntu-latest
   #   steps:

@@ -3,10 +3,10 @@ repository: https://github.com/FlutterQueen/queen
 
 packages:
   - packages/**
-
 command:
   bootstrap:
     usePubspecOverrides: true
+    runPubGetInParallel: false
 scripts:
   lint:
     run: melos run format && melos run analyze
