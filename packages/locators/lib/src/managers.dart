@@ -1,14 +1,28 @@
-abstract class DepndancyManager<S> {
+import 'package:locators/locators.dart';
+
+abstract class DepndancyManager<S> with LifeCycleManager {
+  bool initCalled = false;
+
+  DepndancyManager() {
+    onConstruct(this);
+  }
+
   S build();
+
+  void initIfNeeded() {
+    if (!initCalled && S is HasOnInit) {}
+  }
 }
 
 class SingletoneManger<S> extends DepndancyManager<S> {
   final S dependency;
 
-  SingletoneManger(this.dependency);
+  SingletoneManger(this.dependency) {
+    initIfNeeded();
+  }
 
   @override
-  S build() => dependency;
+  S build() => onBuild(this, dependency);
 }
 
 class LazySingletoneManager<S> extends DepndancyManager<S> {
@@ -18,7 +32,7 @@ class LazySingletoneManager<S> extends DepndancyManager<S> {
   LazySingletoneManager(this.builder);
 
   @override
-  S build() => dependency ??= builder();
+  S build() => onBuild(this, dependency ??= builder());
 }
 
 class FactroyManager<S> extends DepndancyManager<S> {
@@ -27,5 +41,5 @@ class FactroyManager<S> extends DepndancyManager<S> {
   FactroyManager(this.builder);
 
   @override
-  S build() => builder();
+  S build() => onBuild(this, builder());
 }

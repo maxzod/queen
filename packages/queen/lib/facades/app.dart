@@ -11,22 +11,18 @@ abstract class App {
 
   static Future<void> boot({
     LangConfig nationsConfig = const LangConfig(),
-    ThemeConfig themeConfig = const ThemeConfig(),
   }) async {
     /// * will be used with Prefs facade
     final _prefs = await SharedPreferences.getInstance();
 
-    final _themeController = ThemeController(config: themeConfig);
     final _transController = TransController(config: nationsConfig);
 
     /// * register onjects inside `get_it` container
     Locators.put(_prefs);
-    Locators.put(_themeController);
     Locators.put(_transController);
 
     /// waits for the controllers  to be booted
     await Future.wait([
-      _themeController.boot(),
       _transController.boot(),
     ]);
   }

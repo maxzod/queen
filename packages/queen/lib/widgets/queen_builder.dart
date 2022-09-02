@@ -29,7 +29,7 @@ class QThemeBuilderState extends State<QueenBuilder> {
   void initState() {
     _changeListener = () => mounted ? setState(() {}) : () {};
     // * watch theme changes
-    Locators.find<ThemeController>().addListener(_changeListener);
+    // Locators.find<ThemeController>().addListener(_changeListener);
     // * watch locale changes
     Locators.find<TransController>().addListener(_changeListener);
     super.initState();
@@ -37,7 +37,7 @@ class QThemeBuilderState extends State<QueenBuilder> {
 
   @override
   void dispose() {
-    Locators.find<ThemeController>().removeListener(_changeListener);
+    // Locators.find<ThemeController>().removeListener(_changeListener);
     Locators.find<TransController>().removeListener(_changeListener);
     super.dispose();
   }

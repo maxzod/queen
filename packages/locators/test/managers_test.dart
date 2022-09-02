@@ -4,6 +4,15 @@ import 'package:test/scaffolding.dart';
 
 void main() {
   group(
+    'LifeCycleManager',
+    () {
+      test(
+        'it calls onInit with SingletoneManger always',
+        () {},
+      );
+    },
+  );
+  group(
     'SingletoneManger',
     () {
       test(
