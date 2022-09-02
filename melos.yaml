@@ -15,7 +15,7 @@ scripts:
     exec: flutter format .
   test:
     run: |
-      melos exec -c 1 --fail-fast -- \
+      melos exec -c 6 --fail-fast -- \
         "flutter test"
     select-package:
       dir-exists:
