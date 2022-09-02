@@ -7,16 +7,31 @@ packages:
 command:
   bootstrap:
     usePubspecOverrides: true
-
 scripts:
+  lint:
+    run: melos run format && melos run analyze
+
   analyze:
-    exec: dart analyze .
+    run: |
+      melos exec -c 6 -- \
+          dart analyze . --fatal-infos
   format:
-    exec: flutter format .
+    run: melos exec -c 6 -- \
+      flutter format .
   test:
     run: |
       melos exec -c 6 --fail-fast -- \
         "flutter test"
+    select-package:
+      dir-exists:
+        - test
+      ignore:
+        - "*example*"
+
+  test_coverage:
+    run: |
+      melos exec -c 6 --fail-fast -- \
+        "flutter test --coverage"
     select-package:
       dir-exists:
         - test
