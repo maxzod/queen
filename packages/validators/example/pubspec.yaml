@@ -7,9 +7,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  nations: ^0.0.7
-  queen_validators:
-    path: ../
+
+  queen_validators: ^0.0.1
 flutter:
   uses-material-design: true
 dev_dependencies:

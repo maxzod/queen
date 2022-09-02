@@ -1,11 +1,9 @@
-import 'package:flutter_readable/flutter_readable.dart';
-import 'package:locators/locators.dart';
-import 'package:nations/nations.dart';
 import 'package:nations/src/helpers/extractors.dart';
+import 'package:queen/queen.dart';
 
-part 'string.dart';
 part 'map.dart';
 part 'not_found.dart';
+part 'string.dart';
 
 /// base class for extracted data result
 abstract class ExtractedData<T> {

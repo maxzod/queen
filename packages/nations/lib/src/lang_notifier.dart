@@ -8,10 +8,12 @@ const _kPrefsKey = 'queen.nations.lang';
 
 /// nations base class
 class TransController extends ChangeNotifier {
+  ///
   TransController({
     required this.config,
   });
 
+  ///
   final LangConfig config;
 
   late Locale _currentLocale;
