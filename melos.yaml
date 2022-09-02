@@ -13,14 +13,14 @@ scripts:
 
   analyze:
     run: |
-      melos exec -c 6 -- \
+      melos exec -c 1 -- \
           dart analyze . --fatal-infos
   format:
-    run: melos exec -c 6 -- \
+    run: melos exec -c 1 -- \
       flutter format .
   test:
     run: |
-      melos exec -c 6 --fail-fast -- \
+      melos exec -c 1 --fail-fast -- \
         "flutter test"
     select-package:
       dir-exists:
@@ -30,7 +30,7 @@ scripts:
 
   test_coverage:
     run: |
-      melos exec -c 6 --fail-fast -- \
+      melos exec -c 1 --fail-fast -- \
         "flutter test --coverage"
     select-package:
       dir-exists:
