@@ -6,9 +6,12 @@ on:
     branches:
       - master
       - dev
+    paths:
+      - packages/**
   pull_request:
     branches: [master, dev]
-
+    paths:
+      - packages/**
 jobs:
   lint:
     runs-on: ubuntu-latest
