@@ -15,7 +15,7 @@ class ThemeController extends ChangeNotifier {
   /// current theme
   ThemeData get currentTheme => currentQTheme.theme;
 
-  ///
+  /// return current qTheme
   QTheme get currentQTheme => _current ?? config.themes.first;
 
   /// current theme index
@@ -28,8 +28,6 @@ class ThemeController extends ChangeNotifier {
     /// *
     _current = config.themes.atOrNull(lastKnownIndex) ?? config.themes.first;
   }
-
-  /// update the theme to one of the theme list by index
 
   /// update the theme to one of the theme list by index
   Future<void> updateTo(QTheme theme) async {
