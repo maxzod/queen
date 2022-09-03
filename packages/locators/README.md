@@ -1,4 +1,0 @@
-# TODO
-
-- [ ] lifecycle
-- [ ] observers

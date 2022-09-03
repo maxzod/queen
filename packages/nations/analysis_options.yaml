@@ -1,8 +1,0 @@
-include: package:lint/analysis_options_package.yaml
-analyzer:
-  errors:
-    todo: ignore
-    avoid_classes_with_only_static_members: ignore
-linter:
-  rules:
-    - public_member_api_docs
