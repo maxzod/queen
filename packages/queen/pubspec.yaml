@@ -21,7 +21,6 @@ dependencies:
   qcore: 0.0.1
   queen_themes: ^0.0.1
   queen_validators: ^1.0.0
-  shared_preferences: ^2.0.15
   url_launcher: ^6.1.3
 dev_dependencies:
   flutter_test:

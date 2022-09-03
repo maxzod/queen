@@ -210,6 +210,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  qprefs:
+    dependency: "direct main"
+    description:
+      path: "../qprefs"
+      relative: true
+    source: path
+    version: "0.0.1"
   queen:
     dependency: "direct main"
     description:
