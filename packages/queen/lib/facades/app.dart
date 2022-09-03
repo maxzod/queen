@@ -13,12 +13,9 @@ abstract class App {
     LangConfig nationsConfig = const LangConfig(),
   }) async {
     /// * will be used with Prefs facade
-    final _prefs = await SharedPreferences.getInstance();
 
     final _transController = TransController(config: nationsConfig);
 
-    /// * register onjects inside `get_it` container
-    Locators.put(_prefs);
     Locators.put(_transController);
 
     /// waits for the controllers  to be booted

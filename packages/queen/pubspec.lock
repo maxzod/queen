@@ -217,6 +217,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  qprefs:
+    dependency: "direct overridden"
+    description:
+      path: "../qprefs"
+      relative: true
+    source: path
+    version: "0.0.1"
   queen_themes:
     dependency: "direct main"
     description:
@@ -239,7 +246,7 @@ packages:
     source: path
     version: "0.0.5"
   shared_preferences:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: shared_preferences
       url: "https://pub.dartlang.org"

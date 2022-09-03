@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   flutter_readable: ^0.0.2
   nations_assets: ^0.0.1
+  qprefs: 0.0.1
   queen: 0.0.1
 
 dependency_overrides:

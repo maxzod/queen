@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:nations/src/loaders/nation_assets.dart';
+import 'package:qprefs/qprefs.dart';
 import 'package:queen/queen.dart';
 
 const _kPrefsKey = 'queen.nations.lang';

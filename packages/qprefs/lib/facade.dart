@@ -1,9 +1,8 @@
 import 'dart:convert';
 
-import 'package:queen/queen.dart';
+import 'package:locators/locators.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-// TODO :: add docs
-// TODO :: should be in seprate package
 abstract class Prefs {
   static SharedPreferences get instance => Locators.find();
 
@@ -90,8 +89,11 @@ abstract class Prefs {
 
   static Future<void> removeMany(
     List<String> keys,
-  ) =>
-      keys.loop(instance.remove);
+  ) async {
+    for (final key in keys) {
+      await remove(key);
+    }
+  }
 
   static DateTime? getDateOrNull(
     String key,
