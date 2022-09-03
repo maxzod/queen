@@ -4,7 +4,7 @@
 
 ### install npm packages
 
-`npm install` or `npm i`
+`npm i`
 
 ### Running the development server
 
