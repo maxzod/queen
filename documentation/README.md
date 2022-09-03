@@ -2,6 +2,12 @@
 
 ## Get Started
 
+### install npm packages
+
+```
+npm install
+```
+
 ### Running the development server
 
 ```
