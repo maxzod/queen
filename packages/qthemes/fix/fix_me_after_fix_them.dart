@@ -9,7 +9,7 @@ void main() {
     await App.boot();
   });
   tearDown(() async {
-    await App.dispose();
+    // await App.dispose();
   });
   test(
     'updateByIndexOrThrow throws if index is out of range',

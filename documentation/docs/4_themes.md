@@ -3,27 +3,59 @@ title: Themes
 sidebar_position: 4
 ---
 
-# Get Started
+## introduction
 
-queen support multiple themes out of the box in just `TWO` steps
+with `qthmes` you can support in app themes with :
 
-## Config
+- automatic reload not state management needed 🔥
+- support multiples themes (not just one dark and other is light but as many themes as you need) 🎨
+- switch between them in the run time 🔁
+- automatic persistance to last picked theme 💾
+- support for (`debugbar`) soon 🛠
+- access theme with or without context both recreance to same object
+
+## Get Started
+
+### Config
 
 - inside config folder create theme file `theme.dart`
 - extend `QThemeConfig`
-- create your own themes list
+- override `themes` field and add your own themes list
 
-## booting
+### booting
 
-inside the `main` function pass the theme config to the `boot` function
+add `QThemeLauncher` to app lunchers list and inside the constructor give it your config
+
+### switch to the next theme
 
 ```dart
-FlutterQueen.boot(themeConfig:AppThemeConfig());
+AppTheme.next()
 ```
 
-# switching between themes
+### switch to specific theme by index
 
-- to switch to the next theme call `QTheme.next()`
-- to switch to specific theme by index call `QTheme.updateTo(int)` and pass the index
-- to get the current theme call `QTheme.current`
-- to get the current index call `QTheme.currentIndex`
+```dart
+AppTheme.updateTo(2)
+```
+
+### get current theme
+
+```dart
+/// without context
+AppTheme.current
+
+/// with context
+
+Theme.of(context);
+
+
+/// with readable package 😉
+context.theme
+
+```
+
+### get current theme index
+
+```dart
+ AppTheme.currentIndex
+```
