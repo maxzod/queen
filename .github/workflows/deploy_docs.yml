@@ -9,7 +9,7 @@ jobs:
   build-and-deploy:
     defaults:
       run:
-        working-directory: ./
+        working-directory: ./documentation
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
