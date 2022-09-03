@@ -9,7 +9,7 @@ const config = {
   title: "Flutter Queen",
   tagline: "Queen Support for Flutter framework",
   url: "https://flutterqueen.github.io",
-  baseUrl: "/website/",
+  baseUrl: "/queen/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -24,12 +24,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl: "https://github.com/FlutterQueen/website/tree/master/",
+          editUrl: "https://github.com/FlutterQueen/queen/tree/master/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: "https://github.com/FlutterQueen/website/tree/master/",
+          editUrl: "https://github.com/FlutterQueen/queen/tree/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
