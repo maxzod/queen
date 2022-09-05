@@ -100,7 +100,7 @@ abstract class Prefs {
   ) =>
       DateTime.tryParse(getString(key));
 
-  static DateTime getDate(
+  static DateTime getDateOrNow(
     String key,
   ) =>
       getDateOrNull(key) ?? DateTime.now();
