@@ -24,7 +24,7 @@ class ThemeController extends ChangeNotifier {
 
   /// set up the base controller
   Future<void> boot() async {
-    final lastKnownIndex = Prefs.getInt('queen.theme.index');
+    final lastKnownIndex = Prefs.getIntOrZero('queen.theme.index');
 
     /// *
     _current = config.themes.atOrNull(lastKnownIndex) ?? config.themes.first;

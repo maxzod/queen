@@ -3,53 +3,95 @@ import 'dart:convert';
 import 'package:locators/locators.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// easie handling shared prefernces
 abstract class Prefs {
-  static SharedPreferences get instance => Locators.find();
+  /// return shared pref from the Locators container
+  static SharedPreferences get _prefs => Locators.find();
 
-  static String? getStringOrNull(String key) => instance.getString(key);
+  /// return `String` by key if exists else return `null`
+  static String? getStringOrNull(
+    String key,
+  ) =>
+      _prefs.getString(key);
+
+  /// return `String` by key if exists else return `def` value
+  static String? getStringOr(
+    String key,
+    String def,
+  ) =>
+      getStringOrNull(key) ?? def;
+
+  /// return `String` by key if exists else return `''` (Empty String)
+  static String getStringOrEmpty(
+    String key,
+  ) =>
+      getStringOrNull(key) ?? '';
+
+  /// set the value to given key in shared prefs
   static Future<void> setString(
     String key,
     String value,
   ) =>
-      instance.setString(key, value);
-  static String getString(
-    String key, [
-    String defult = '',
-  ]) =>
-      getStringOrNull(key) ?? defult;
+      _prefs.setString(key, value);
+
+  /// set the value to given key to `''` (Empty String)
+  static Future<void> setStringToEmpty(
+    String key,
+  ) =>
+      _prefs.setString(key, '');
+
+  /// return `int` by key else return `null`
   static int? getIntOrNull(
     String key,
   ) =>
-      instance.getInt(key);
+      _prefs.getInt(key);
 
-  static int getInt(
-    String key, [
-    int defult = 0,
-  ]) =>
-      getIntOrNull(key) ?? defult;
+  /// return `int` if exists else return `def`
+  static int getIntOr(
+    String key,
+    int def,
+  ) =>
+      getIntOrNull(key) ?? def;
 
-  static bool getBool(
+  static int getIntOrZero(
     String key,
   ) =>
-      instance.getBool(key) ?? false;
+      getIntOrNull(key) ?? 0;
+
+  static bool? getBoolOrNull(
+    String key,
+  ) =>
+      _prefs.getBool(key);
+
+  static bool getBoolOr(String key, bool def) => _prefs.getBool(key) ?? def;
+
+  static bool getBoolOrFalse(
+    String key,
+  ) =>
+      getBoolOr(key, false);
+
+  static bool getBoolOrTrue(
+    String key,
+  ) =>
+      getBoolOr(key, false);
 
   static Future<void> setInt(
     String key,
     int value,
   ) =>
-      instance.setInt(key, value);
+      _prefs.setInt(key, value);
 
   static Future<void> setBool(
     String key,
     // ignore: avoid_positional_boolean_parameters
     bool value,
   ) =>
-      instance.setBool(key, value);
+      _prefs.setBool(key, value);
 
   static Map<String, dynamic> getMap(
     String key,
   ) {
-    final data = getString(key);
+    final data = getStringOrEmpty(key);
     return data.isEmpty ? {} : jsonDecode(data) as Map<String, dynamic>;
   }
 
@@ -77,15 +119,15 @@ abstract class Prefs {
   static Object? find(
     String key,
   ) =>
-      instance.get(key);
+      _prefs.get(key);
 
   /// clear the share preferences
-  static Future<void> clear() => instance.clear();
+  static Future<void> clear() => _prefs.clear();
 
   static Future<void> remove(
     String key,
   ) =>
-      instance.remove(key);
+      _prefs.remove(key);
 
   static Future<void> removeMany(
     List<String> keys,
@@ -98,7 +140,7 @@ abstract class Prefs {
   static DateTime? getDateOrNull(
     String key,
   ) =>
-      DateTime.tryParse(getString(key));
+      DateTime.tryParse(getStringOrEmpty(key));
 
   static DateTime getDateOrNow(
     String key,
