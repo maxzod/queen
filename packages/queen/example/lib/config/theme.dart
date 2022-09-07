@@ -1,4 +1,3 @@
- 
 // class AppThemeConfig extends ThemeConfig {
 //   /// * List of available thames
 //   @override
