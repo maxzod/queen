@@ -10,7 +10,7 @@ sidebar_position: 7
   ```
   ## getStringOr
   
- - Return `String` by key if exists else return `null`
+ - Return `String` by key if exists else return default value
 
   ```dart
 String? foo  = Prefs.getStringOr('key','def');
@@ -19,111 +19,127 @@ String? foo  = Prefs.getStringOr('key','def');
 
 - Return `String` by key if exists else return `''` (Empty String)
 ```dart
-String? foo  = Prefs.getStringOrEmpty('key');
+String foo  = Prefs.getStringOrEmpty('key');
 ```
 
 ## setString
 
-- Set the value to given key in shared prefs (Empty String)
+- Set the value to given key in shared prefs 
 ```dart
-String? foo  = Prefs.setString('key','value');
+Prefs.setString('key','value');
 ```
 ## setStringToEmpty
 
 - Set the value to given key to `''` (Empty String)
 ```dart
-String? foo  = Prefs.setString('key','');
+Prefs.setStringToEmpty('key');
 ```
 ## getIntOrNull
 
 - Return `int` by key else return `null`
 ```dart
-int? foo  = Prefs.getInt('key');
+int? foo  = Prefs.getIntOrNull('key');
 ```
 ## getIntOr
 
-- Return `int` by key else return `null`
+- Return `int` by key else return default value`
 ```dart
-int? foo  = Prefs.getIntOrNull('key') ?? def;
+int foo  = Prefs.getIntOr('key',def) ;
 ```
 ## getIntOrZero
 
 - Return `int` by key else return `0`
 ```dart
-int? foo  = Prefs.getIntOrNull('key') ?? 0;
+int foo  = Prefs.getIntOrZero('key') ;
 ```
 
 ## getBoolOrNull
 
-- Return `bool` by key if exist return True - else False 
+- Return `bool` by key if exist else return `null` 
 ```dart
-bool? foo  = Prefs.getBoolOrNull('key',true) ;
+bool? foo  = Prefs.getBoolOrNull('key') ;
 ```
 ## getBoolOr
 
 - Return `bool` by key if exist - else return the default value
 ```dart
-bool? firstTimeOpen  = Prefs.getBoolOr('key', true ) ;
+bool firstTimeOpen  = Prefs.getBoolOr('key', true ) ;
 ```
 ## getBoolOrFalse
 
-- Return `bool` by key if exist return True - else False 
+- Return `bool` by key if exist else return False  
 ```dart
-bool? isFound  = Prefs.getBoolOrFalse('key', false ) ;
+bool isFound  = Prefs.getBoolOrFalse('key') ;
 ```
 ## getBoolOrTrue
 
-- Return `bool` by key if exist return True - else False 
+- Return `bool` by key if exist else return True 
 ```dart
-bool? isFound  = Prefs.getBoolOrTrue('key', true ) ;
+bool isFound  = Prefs.getBoolOrTrue('key' ) ;
 ```
 
 
 ## setBool
 
-- Return `bool` by key if exist return True - else False 
+- Set the value => True or False to given key in shared prefs  
 ```dart
-bool? isFound  = Prefs.setBool('key', false ) ;
+ Prefs.setBool(key, value);
 ```
 
 ## getMap
 
-- Return  `Map<String,dynamic>` token only key if key nullable retrun empty Map `{}` 
+-  Return Map by given key or value
 ```dart
-Future<void> isMap  = Prefs.getMap('key') ;
+ Map<String, dynamic> isMap  = Prefs.getMap('key') ;
 ```
 ## setMap
 
-- Return Future token only key and map if key nullable retrun empty Map `{}` 
+- Set value of map by given key & own map 
 ```dart
-Future<void> isSetMap  = Prefs.setMap('key','Map<String,dynamic>') ;
+Prefs.setMap('key',{}) ;
 ```
 
 ## clear
 
-- clear the share preferences `Cache`
+- clear the share preferences 
 ```dart
-Future<void> clearCache  = Prefs.clear() ;
+ Prefs.clear() ;
 ```
 
 ## remove
 
--  Remove specially key frome `Chace` only pass key 
+-  Remove specially key from sheared preferences 
 
 ```dart
-Future<void> removespecialvalue   = Prefs.remove('key') ;
+Prefs.remove('key') ;
 ```
 
 ## removeMany
 
--  Remove list of value from `Chace` just pass key of list 
+-  Remove list of value from sheared preferences just pass key of list 
 
 ```dart
-Future<void> clearList  = Prefs.removeMany('key') ;
+ Prefs.removeMany(["key","foo","rQueen"]) ;
 ```
 ## getDateOrNull
 - Return `dateTime` by key if exists else return `null`
 ```dart
-Future<void> clearList  = Prefs.getDateOrNull('03:10:2022') ;
+DateTime? date =Prefs.getDateOrNull('key') ;
 ```
 
+## getDateOrNow
+- Return `dateTime` by key if exists else return current date
+```dart
+DateTime? date =Prefs.getDateOrNull('key') ;
+```
+## setDate
+- Set data time by given key & value => from data time  
+```dart
+Prefs.setDate('key',dateTime) ;
+```
+
+## find
+- get value without preferences the data types by given key 
+```dart
+Prefs.find('key') ;
+```

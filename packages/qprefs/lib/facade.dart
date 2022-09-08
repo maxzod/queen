@@ -97,6 +97,7 @@ abstract class Prefs {
     return data.isEmpty ? {} : jsonDecode(data) as Map<String, dynamic>;
   }
 
+  /// return Map by given key or value
   static Future<void> setMap(
     String key,
     Map<String, dynamic> map,
