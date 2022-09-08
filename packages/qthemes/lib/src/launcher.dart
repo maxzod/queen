@@ -9,10 +9,8 @@ class QThemeLauncher extends Launcher {
   QThemeLauncher(this.config);
 
   @override
-  void register() {
-    Locators.put(ThemeController(config: config));
-  }
-
-  @override
-  FutureOr<void> boot() async => find<ThemeController>().boot();
+  FutureOr<void> boot() async => Locators.put<ThemeController>(
+        await ThemeController(config: config)
+          ..boot(),
+      );
 }

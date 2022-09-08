@@ -15,7 +15,6 @@ Future<void> bootLaunchers(List<Launcher> launchers) async {
   final series = <Launcher>[];
   for (final launcher in launchers) {
     (launcher.shouldRunInParallel ? parrel : series).add(launcher);
-    launcher.register();
   }
   await series.loop((e) => e.boot());
   await Future.wait(
