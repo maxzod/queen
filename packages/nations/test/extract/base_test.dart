@@ -1,6 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nations/src/extract/base.dart';
-import 'package:queen/queen.dart';
 
 Future<void> main() async {
   // await App.boot();
