@@ -16,3 +16,13 @@ abstract class TextValidationRule {
   /// passed throw constructor to skip localized error
   final String? error;
 }
+
+class QRule extends TextValidationRule {
+  final bool Function(String input) validator;
+
+  const QRule(this.validator, super.error);
+
+  ///  return a bool Either valid or NOT
+  @override
+  bool isValid(String input) => validator(input);
+}
