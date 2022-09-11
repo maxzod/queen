@@ -51,3 +51,21 @@ its localized out of the box
 ### override the error message
 
 copy the key and override it in any language you want under the package name 'validation'
+
+## QRule
+
+you can build your own rule on the go 😎
+
+```dart
+@override
+Widget build(BuildContext context) {
+return TextFormField(
+     // use qValidator function and provider list of rules to apply on this field
+    validator: qValidator([
+      QRule((String input){
+        return input.startsWith('050');
+      },'must starts with 050'),
+    ]),
+  );
+  }
+```
