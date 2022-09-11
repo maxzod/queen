@@ -58,6 +58,8 @@ abstract class Prefs {
   ) =>
       getIntOrNull(key) ?? 0;
 
+  ///  return `bool` by key if exist return True else false
+
   static bool? getBoolOrNull(
     String key,
   ) =>
@@ -95,6 +97,7 @@ abstract class Prefs {
     return data.isEmpty ? {} : jsonDecode(data) as Map<String, dynamic>;
   }
 
+  /// return Map by given key or value
   static Future<void> setMap(
     String key,
     Map<String, dynamic> map,
@@ -124,6 +127,7 @@ abstract class Prefs {
   /// clear the share preferences
   static Future<void> clear() => _prefs.clear();
 
+  /// remove specially key that you want share preferences
   static Future<void> remove(
     String key,
   ) =>

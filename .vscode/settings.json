@@ -1,4 +1,9 @@
 {
   "dart.runPubGetOnPubspecChanges": false,
-  "cSpell.words": ["debugbar", "qprefs", "qthmes"]
+  "cSpell.words": [
+    "debugbar",
+    "Prefs",
+    "qprefs",
+    "qthmes"
+  ]
 }
