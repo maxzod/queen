@@ -1,3 +1,5 @@
+import 'package:readable/readable.dart';
+
 ///
 extension RMap<K, V> on Map<K, V> {
   /// * return a new map with the `null` values from the original map only
@@ -58,4 +60,15 @@ extension RMap<K, V> on Map<K, V> {
     holder.removeWhere((key, value) => value is String && value.isEmpty);
     return holder;
   }
+
+  /// return random key or null if map is Empty
+  K? randomKeyOrNull() => isEmpty ? null : keys.random;
+
+  /// return random key or the defualt if map is empty
+  K randomKeyOr(K def) => randomKeyOrNull() ?? def;
+
+  /// return random key or throw state error
+  K randomKey() =>
+      randomKeyOrNull() ??
+      (throw StateError('Map is Empty cant use randomKey()'));
 }
