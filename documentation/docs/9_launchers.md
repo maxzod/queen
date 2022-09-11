@@ -8,8 +8,6 @@ Introduction
 Launchers are the way queen organize the process of register dependencies and bootstrap for Queen . Your own application, and other developers packages ,
 
 ![How Pipes Work](./assets/how/launchers_work.png)
- 
- 
 
 ## Boot
 
