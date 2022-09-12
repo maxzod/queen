@@ -6,4 +6,7 @@ extension RList<T> on List<T?> {
     clear();
     addAll(newItems);
   }
+
+  /// if the list contains `item` will remove it else will add it
+  void toggle(T item) => contains(item) ? remove(item) : add(item);
 }

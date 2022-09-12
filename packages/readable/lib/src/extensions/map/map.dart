@@ -67,8 +67,42 @@ extension RMap<K, V> on Map<K, V> {
   /// return random key or the defualt if map is empty
   K randomKeyOr(K def) => randomKeyOrNull() ?? def;
 
+  /// return random key or the use the builder to return the key
+  K randomKeyOrBuilder(K Function() builder) => randomKeyOrNull() ?? builder();
+
   /// return random key or throw state error
   K randomKey() =>
       randomKeyOrNull() ??
       (throw StateError('Map is Empty cant use randomKey()'));
+
+  /// return random value or null if map is Empty
+  V? randomValueOrNull() => isEmpty ? null : values.random;
+
+  /// return random value or the defualt if map is empty
+  V randomValueOr(V def) => randomValueOrNull() ?? def;
+
+  /// return random value or the use the builder to return the key
+  V randomValueOrBuilder(V Function() builder) =>
+      randomValueOrNull() ?? builder();
+
+  /// return random value or throw state error
+  V randomValue() =>
+      randomValueOrNull() ??
+      (throw StateError('Map is Empty cant use randomValue()'));
+
+  /// return random Entry or null if map is Empty
+  MapEntry<K, V>? randomEntryOrNull() => isEmpty ? null : entries.random;
+
+  /// return random Entry or the defualt if map is empty
+  MapEntry<K, V> randomEntryOr(MapEntry<K, V> def) =>
+      randomEntryOrNull() ?? def;
+
+  /// return random Entry or the use the builder to return the key
+  MapEntry<K, V> randomEntryOrBuilder(MapEntry<K, V> Function() builder) =>
+      randomEntryOrNull() ?? builder();
+
+  /// return random Entry or throw state error
+  MapEntry<K, V> randomEntry() =>
+      randomEntryOrNull() ??
+      (throw StateError('Map is Empty cant use randomValue()'));
 }
