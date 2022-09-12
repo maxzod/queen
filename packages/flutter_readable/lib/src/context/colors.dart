@@ -21,7 +21,10 @@ extension RContextColors on BuildContext {
 
   Color get hintColor => Theme.of(this).hintColor;
   Color get errorColor => Theme.of(this).errorColor;
-  ColorScheme? get colorScheme => Theme.of(this).colorScheme;
+
+  ColorScheme get colorScheme => Theme.of(this).colorScheme;
+
+  Color get secondary => colorScheme.secondary;
 
   Color? get buttonPrimaryColor =>
       Theme.of(this).buttonTheme.colorScheme?.primary;
