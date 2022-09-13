@@ -61,4 +61,21 @@ extension RString on String {
   /// * return the last character
   /// * return `null` if isEmpty
   String? get lastOrNull => isEmpty ? null : this[length - 1];
+
+  String? lastOr(String def) => lastOrNull ?? def;
+
+  String? lastOrIfAbsent(String Function() ifAbsent) =>
+      lastOrNull ?? ifAbsent();
+
+  /// Returns last symbol of string or empty string if `this` is null or empty
+  String get firstOrEmpty => firstOrNull ?? '';
+
+  /// * return the first character
+  /// * return `null` if isEmpty
+  String? get firstOrNull => isEmpty ? null : this[0];
+
+  String? firstOr(String def) => firstOrNull ?? def;
+
+  String? firstOrIfAbsent(String Function() ifAbsent) =>
+      firstOrNull ?? ifAbsent();
 }
