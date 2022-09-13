@@ -125,6 +125,9 @@ abstract class Prefs {
       _prefs.get(key);
 
   /// clear the share preferences
+  /// TODO ::: safe attributes
+  /// ! IT WILL EFFECT QUEEN PACAKAGES ALSON LIKE
+  /// ! REMOVE USED THEME NUMBER AND SELECTED LOCALE
   static Future<void> clear() => _prefs.clear();
 
   /// remove specially key that you want share preferences
