@@ -14,7 +14,7 @@ make sure dart path is in you system environment
 then run the command :
 
 ```bash
-pub global activate lighthouse
+flutter pub global activate lighthouse
 ```
 
 now you can use the lighthouse with `lighthouse` or `lh` .
