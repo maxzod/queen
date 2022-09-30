@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:qthemes/qthemes.dart';
 import 'package:queen/queen.dart';
 
 /// facade for the theme features

@@ -1,12 +1,16 @@
 import 'dart:convert';
 
-import 'package:locators/locators.dart';
+import 'package:qcore/qcore.dart';
+import 'package:qprefs/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// easie handling shared prefernces
+/// ease handling shared preferences
 abstract class Prefs {
-  /// return shared pref from the Locators container
-  static SharedPreferences get _prefs => Locators.find();
+  static SharedPreferences get sharedPreferences => _prefs;
+
+  /// return shared pref from the app container
+  static SharedPreferences get _prefs =>
+      App.container.read<SharedPreferences>(sharedPrefsProvider);
 
   /// return `String` by key if exists else return `null`
   static String? getStringOrNull(
@@ -126,7 +130,7 @@ abstract class Prefs {
 
   /// clear the share preferences
   /// TODO ::: safe attributes
-  /// ! IT WILL EFFECT QUEEN PACAKAGES ALSON LIKE
+  /// ! IT WILL EFFECT QUEEN PACKAGES ALSO LIKE
   /// ! REMOVE USED THEME NUMBER AND SELECTED LOCALE
   static Future<void> clear() => _prefs.clear();
 

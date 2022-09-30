@@ -12,8 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  queen:
-    path: ../
+  queen: ^0.0.1
 
 dev_dependencies:
   flutter_test:

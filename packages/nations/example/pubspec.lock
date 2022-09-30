@@ -95,6 +95,13 @@ packages:
       relative: true
     source: path
     version: "0.0.5"
+  flutter_riverpod:
+    dependency: transitive
+    description:
+      name: flutter_riverpod
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0-dev.9"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -231,6 +238,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  qthemes:
+    dependency: "direct overridden"
+    description:
+      path: "../../qthemes"
+      relative: true
+    source: path
+    version: "0.0.1"
   queen:
     dependency: "direct overridden"
     description:
@@ -259,6 +273,13 @@ packages:
       relative: true
     source: path
     version: "0.0.5"
+  riverpod:
+    dependency: transitive
+    description:
+      name: riverpod
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0-dev.9"
   shared_preferences:
     dependency: transitive
     description:
@@ -334,6 +355,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
+  state_notifier:
+    dependency: transitive
+    description:
+      name: state_notifier
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.7.2+1"
   stream_channel:
     dependency: transitive
     description:
@@ -441,4 +469,4 @@ packages:
     version: "0.2.0"
 sdks:
   dart: ">=2.17.0 <3.0.0"
-  flutter: ">=2.10.0"
+  flutter: ">=3.0.0"

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:qprefs/qprefs.dart';
-import 'package:qthemes/qthemes.dart';
 import 'package:queen/queen.dart';
 
 /// queen base theme controller

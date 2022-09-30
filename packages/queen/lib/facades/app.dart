@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:queen/queen.dart';
 
 /// app facade
-abstract class App {
+abstract class AppF {
   /// *  return the current app locale
   static Locale get locale => find<TransController>().locale;
 

@@ -6,7 +6,7 @@ Future<void> main() async {
     TestWidgetsFlutterBinding.ensureInitialized();
   });
   setUp(() async {
-    await App.boot();
+    await AppF.boot();
   });
   tearDown(() {
     Locators.clear();
