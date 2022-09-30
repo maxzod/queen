@@ -7,17 +7,22 @@ Future<void> runQueen({
   await bootLaunchers(config.launchers);
 }
 
-/// calls register for all lanchers
+/// calls register for all launchers
 /// then boots series launchers
-/// then boots all parrel launchers
+/// then boots all parallel launchers
 Future<void> bootLaunchers(List<Launcher> launchers) async {
-  final parrel = <Launcher>[];
+  final parallel = <Launcher>[];
   final series = <Launcher>[];
+
   for (final launcher in launchers) {
-    (launcher.shouldRunInParallel ? parrel : series).add(launcher);
+    (launcher.shouldRunInParallel ? parallel : series).add(launcher);
   }
-  await series.loop((e) => e.boot());
+  for (final sLauncher in series) {
+    await sLauncher.boot();
+  }
   await Future.wait(
-    parrel.map((e) async => e.boot()),
+    parallel.map(
+      (e) async => await e.boot(),
+    ),
   );
 }

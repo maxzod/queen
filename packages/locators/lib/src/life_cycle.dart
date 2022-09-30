@@ -1,14 +1,14 @@
 import 'package:locators/locators.dart';
 
 mixin LifeCycleManager<T> {
-  void onConstruct(DepndancyManager<T> manager) {
-    if (manager is SingletoneManger && T is HasOnInit) {
-      ((manager as SingletoneManger).dependency as HasOnInit).onInit();
+  void onConstruct(DependencyManager<T> manager) {
+    if (manager is SingletonManger && T is HasOnInit) {
+      ((manager as SingletonManger).dependency as HasOnInit).onInit();
     }
   }
 
   T onBuild(
-    DepndancyManager<T> manager,
+    DependencyManager<T> manager,
     T instance,
   ) {
     return instance;
@@ -25,12 +25,12 @@ abstract class HasOnReady with HasOnInit {
 }
 
 abstract class HasOnDelete {
-  /// called after the object deleted from the conatiner
+  /// called after the object deleted from the container
   void onDelete();
 }
 
 abstract class HasOnClose {
-  /// called after the object deleted from the conatiner
+  /// called after the object deleted from the container
   void onClose();
 }
 
@@ -39,8 +39,10 @@ mixin AlwaysAlive {}
 mixin HasLifeCycle implements HasOnInit, HasOnDelete, HasOnClose, HasOnReady {
   @override
   void onInit() {}
+
   @override
   void onReady() {}
+
   @override
   void onDelete() {}
 

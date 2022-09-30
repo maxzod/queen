@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:locators/locators.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// easie handling shared prefernces
+/// ease handling shared preferences
 abstract class Prefs {
   /// return shared pref from the Locators container
   static SharedPreferences get _prefs => Locators.find();

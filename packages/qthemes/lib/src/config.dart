@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qthemes/qthemes.dart';
 
-/// holds avilable theme for the app
+/// holds available theme for the app
 class ThemeConfig {
   const ThemeConfig();
 

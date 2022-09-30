@@ -1,9 +1,9 @@
 import 'package:locators/locators.dart';
 
-abstract class DepndancyManager<S> with LifeCycleManager {
+abstract class DependencyManager<S> with LifeCycleManager {
   bool initCalled = false;
 
-  DepndancyManager() {
+  DependencyManager() {
     onConstruct(this);
   }
 
@@ -14,10 +14,10 @@ abstract class DepndancyManager<S> with LifeCycleManager {
   }
 }
 
-class SingletoneManger<S> extends DepndancyManager<S> {
+class SingletonManger<S> extends DependencyManager<S> {
   final S dependency;
 
-  SingletoneManger(this.dependency) {
+  SingletonManger(this.dependency) {
     initIfNeeded();
   }
 
@@ -25,20 +25,20 @@ class SingletoneManger<S> extends DepndancyManager<S> {
   S build() => onBuild(this, dependency);
 }
 
-class LazySingletoneManager<S> extends DepndancyManager<S> {
+class LazySingletonManager<S> extends DependencyManager<S> {
   S? dependency;
   final S Function() builder;
 
-  LazySingletoneManager(this.builder);
+  LazySingletonManager(this.builder);
 
   @override
   S build() => onBuild(this, dependency ??= builder());
 }
 
-class FactroyManager<S> extends DepndancyManager<S> {
+class FactoryManager<S> extends DependencyManager<S> {
   final S Function() builder;
 
-  FactroyManager(this.builder);
+  FactoryManager(this.builder);
 
   @override
   S build() => onBuild(this, builder());

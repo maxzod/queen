@@ -2,9 +2,16 @@
 extension RList<T> on List<T?> {
   /// clears the iterable
   /// add all items to the iterable
-  void assingAll(Iterable<T> newItems) {
+  void assignAll(Iterable<T> newItems) {
     clear();
     addAll(newItems);
+  }
+
+  /// clears the iterable
+  /// add   item  to the iterable
+  void assignOne(T newItem) {
+    clear();
+    add(newItem);
   }
 
   /// if the list contains `item` will remove it else will add it

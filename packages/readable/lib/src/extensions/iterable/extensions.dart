@@ -91,6 +91,6 @@ extension RIterable<T> on Iterable<T> {
     return result;
   }
 
-  /// return true if iteable not contains input
+  /// return true if iterable not contains input
   bool notContains(Iterable<T> input) => !contains(input);
 }

@@ -217,7 +217,7 @@ extension RDateTime on DateTime {
   // bool get isLastThursdayOfTheYear => day == DateTime.thursday;
   // bool get isLastFridayOfTheYear => day == DateTime.friday;
 
-  /// returns true if date is betwwen tow dates
+  /// returns true if date is between tow dates
   // bool isBetween(DateTime start, DateTime end) =>
   //     start.isBefore(this) && end.isAfter(this);
 
@@ -261,6 +261,6 @@ extension RDateTime on DateTime {
 ///
 /// *  lastDayPreviousWeek
 /// *  lastDayPreviousMonth
-/// *  lastDayPreviousYeara
+/// *  lastDayPreviousYear
 
 /// * isSameWeek
