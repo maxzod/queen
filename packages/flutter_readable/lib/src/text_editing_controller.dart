@@ -5,7 +5,7 @@ extension RTextEditingController on TextEditingController {
 
   bool get isNotEmpty => text.isNotEmpty;
 
-  int get lenght => text.length;
+  int get length => text.length;
 
   void append(String input) {
     text = '$text$input';

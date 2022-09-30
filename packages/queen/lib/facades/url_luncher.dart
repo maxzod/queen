@@ -1,6 +1,6 @@
 import 'package:url_launcher/url_launcher.dart';
 
-/// TODO ::  SHOULD BE IN SEPRATE PACKAGE
+/// TODO ::  SHOULD BE IN other PACKAGE
 abstract class Launch {
   static Future<bool> url(
     String url,

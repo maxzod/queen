@@ -2,11 +2,11 @@ import 'package:locators/locators.dart';
 import 'package:qpipeline/event.dart';
 import 'package:qpipeline/listener.dart';
 
-class QPipe {
+class listener {
   final listeners = <QListener>[];
 
   // TODO :: add lazy on
-  // onLazy<QEvent>(()=> listiner);
+  // onLazy<QEvent>(()=> listener);
   void on<T extends QEvent>(QListener listener) => listeners.add(listener);
 
   void sink(QEvent event) {
@@ -21,7 +21,7 @@ class QPipe {
 }
 
 abstract class Pipes {
-  static QPipe get instance => Locators.find<QPipe>();
+  static listener get instance => Locators.find<listener>();
 
   static void on<T extends QEvent>(QListener listener) =>
       instance.on<T>(listener);

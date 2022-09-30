@@ -1,7 +1,7 @@
 import '../locators.dart';
 
-abstract class LocatorsObserer {
-  void onInserted(DepndancyManager manager);
-  void onRead(DepndancyManager manager);
-  void onDelete(DepndancyManager manager);
+abstract class LocatorsObserver {
+  void onInserted(DependencyManager manager);
+  void onRead(DependencyManager manager);
+  void onDelete(DependencyManager manager);
 }

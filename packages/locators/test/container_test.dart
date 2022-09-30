@@ -1,7 +1,7 @@
 import 'package:locators/locators.dart';
 import 'package:test/test.dart';
 
-class TestInstance extends DepndancyManager {
+class TestInstance extends DependencyManager {
   @override
   build() => throw UnimplementedError();
 }
@@ -69,7 +69,7 @@ void main() {
           expect(Locators.contains<String>(), isFalse);
           Locators.put<String>('');
           expect(
-            Locators.container['String'] is SingletoneManger,
+            Locators.container['String'] is SingletonManger,
             isTrue,
           );
         },
@@ -102,7 +102,7 @@ void main() {
           expect(Locators.contains<String>(), isFalse);
           Locators.putLazy<String>(() => '');
           expect(
-            Locators.container['String'] is LazySingletoneManager,
+            Locators.container['String'] is LazySingletonManager,
             isTrue,
           );
         },
@@ -135,7 +135,7 @@ void main() {
           expect(Locators.contains<String>(), isFalse);
           Locators.factory<String>(() => '');
           expect(
-            Locators.container['String'] is FactroyManager,
+            Locators.container['String'] is FactoryManager,
             isTrue,
           );
         },

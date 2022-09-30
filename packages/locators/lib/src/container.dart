@@ -4,7 +4,7 @@ import 'package:locators/locators.dart';
 abstract class Locators {
   @protected
   @visibleForTesting
-  static final container = <String, DepndancyManager>{};
+  static final container = <String, DependencyManager>{};
 
   static String _buildKey<T>(String? tag) => '$T${tag ?? ''}';
 
@@ -23,7 +23,7 @@ abstract class Locators {
     String? tag,
   }) =>
       _insert(
-        SingletoneManger<I>(dependency),
+        SingletonManger<I>(dependency),
         tag: tag,
       );
 
@@ -32,7 +32,7 @@ abstract class Locators {
     String? tag,
   }) {
     _insert(
-      LazySingletoneManager<S>(builder),
+      LazySingletonManager<S>(builder),
       tag: tag,
     );
   }
@@ -42,7 +42,7 @@ abstract class Locators {
     String? tag,
   }) {
     _insert(
-      FactroyManager<S>(builder),
+      FactoryManager<S>(builder),
       tag: tag,
     );
   }
@@ -94,7 +94,7 @@ abstract class Locators {
 
   /// Injects the Instance [S] builder into the `_singleton` HashMap.
   static void _insert<I>(
-    DepndancyManager<I> manager, {
+    DependencyManager<I> manager, {
     String? tag,
     bool force = false,
   }) {

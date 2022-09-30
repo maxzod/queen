@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:queen/queen.dart';
 
-/// facilitate controlloing the localization process
+/// facilitate controlling the localization process
 abstract class AppLang {
   // shortcut to the controller
   static TransController get _controller => find<TransController>();
@@ -11,7 +11,7 @@ abstract class AppLang {
   /// * return the current locale
   static Locale get current => _controller.locale;
 
-  /// * return true if the current locale == the paramter
+  /// * return true if the current locale == the parameter
   static bool equals(Locale locale) => current == locale;
 
   /// * return current locale language code

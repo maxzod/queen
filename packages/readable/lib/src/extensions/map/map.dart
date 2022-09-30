@@ -64,7 +64,7 @@ extension RMap<K, V> on Map<K, V> {
   /// return random key or null if map is Empty
   K? randomKeyOrNull() => isEmpty ? null : keys.random;
 
-  /// return random key or the defualt if map is empty
+  /// return random key or the default if map is empty
   K randomKeyOr(K def) => randomKeyOrNull() ?? def;
 
   /// return random key or the use the builder to return the key
@@ -78,7 +78,7 @@ extension RMap<K, V> on Map<K, V> {
   /// return random value or null if map is Empty
   V? randomValueOrNull() => isEmpty ? null : values.random;
 
-  /// return random value or the defualt if map is empty
+  /// return random value or the default if map is empty
   V randomValueOr(V def) => randomValueOrNull() ?? def;
 
   /// return random value or the use the builder to return the key
@@ -93,7 +93,7 @@ extension RMap<K, V> on Map<K, V> {
   /// return random Entry or null if map is Empty
   MapEntry<K, V>? randomEntryOrNull() => isEmpty ? null : entries.random;
 
-  /// return random Entry or the defualt if map is empty
+  /// return random Entry or the default if map is empty
   MapEntry<K, V> randomEntryOr(MapEntry<K, V> def) =>
       randomEntryOrNull() ?? def;
 

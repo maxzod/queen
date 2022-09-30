@@ -19,7 +19,7 @@ void main() {
         'it return the same instance always',
         () {
           final msg = 'foo';
-          final m = SingletoneManger(msg);
+          final m = SingletonManger(msg);
           expect(identical(msg, m.build()), isTrue);
         },
       );
@@ -32,7 +32,7 @@ void main() {
       test(
         'it does not build until build calls',
         () {
-          final m = LazySingletoneManager(() => 'foo');
+          final m = LazySingletonManager(() => 'foo');
           expect(m.dependency, isNull);
           expect(m.build(), 'foo');
           expect(m.dependency, 'foo');
@@ -46,7 +46,7 @@ void main() {
       test(
         'it builds new object every time',
         () {
-          final m = FactroyManager(() => StringBuffer());
+          final m = FactoryManager(() => StringBuffer());
           expect(
             identical(m.build(), m.build()),
             isFalse,
