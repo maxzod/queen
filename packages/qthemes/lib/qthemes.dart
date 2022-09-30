@@ -5,3 +5,4 @@ export 'src/config.dart';
 export 'src/controller.dart';
 export 'src/facade.dart';
 export 'src/launcher.dart';
+export 'src/builder.dart';
