@@ -1,19 +1,19 @@
 import 'package:locators/locators.dart';
 
-mixin LifeCycleManager<T> {
-  void onConstruct(DependencyManager<T> manager) {
-    if (manager is SingletonManger && T is HasOnInit) {
-      ((manager as SingletonManger).dependency as HasOnInit).onInit();
-    }
-  }
+// mixin LifeCycleManager<T> {
+//   void onConstruct(DependencyManager<T> manager) {
+//     if (manager is SingletonManger && T is HasOnInit) {
+//       ((manager as SingletonManger).dependency as HasOnInit).onInit();
+//     }
+//   }
 
-  T onBuild(
-    DependencyManager<T> manager,
-    T instance,
-  ) {
-    return instance;
-  }
-}
+//   T onBuild(
+//     DependencyManager<T> manager,
+//     T instance,
+//   ) {
+//     return instance;
+//   }
+// }
 
 abstract class HasOnInit {
   /// called once the object added to the container

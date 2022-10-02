@@ -1,24 +1,27 @@
 import 'package:meta/meta.dart';
 import 'package:locators/locators.dart';
 
-abstract class Locators {
+// ignore: non_constant_identifier_names
+final Locators = LocatorsBase();
+
+class LocatorsBase {
   @protected
   @visibleForTesting
   static final container = <String, DependencyManager>{};
 
-  static String _buildKey<T>(String? tag) => '$T${tag ?? ''}';
+  String _buildKey<T>(String? tag) => '$T${tag ?? ''}';
 
-  static bool contains<S>({
+  bool contains<S>({
     String? tag,
   }) =>
       container.containsKey(_buildKey<S>(tag));
 
-  static bool containsKey({
+  bool containsKey({
     String? key,
   }) =>
       container.containsKey(key);
 
-  static void put<I>(
+  void put<I>(
     I dependency, {
     String? tag,
   }) =>
@@ -26,8 +29,13 @@ abstract class Locators {
         SingletonManger<I>(dependency),
         tag: tag,
       );
+  void putAsyncIfAbsent<I>(
+    I dependency, {
+    String? tag,
+  }) =>
+      (throw UnimplementedError());
 
-  static void putLazy<S>(
+  void putLazy<S>(
     S Function() builder, {
     String? tag,
   }) {
@@ -37,7 +45,7 @@ abstract class Locators {
     );
   }
 
-  static void factory<S>(
+  void factory<S>(
     S Function() builder, {
     String? tag,
   }) {
@@ -47,7 +55,7 @@ abstract class Locators {
     );
   }
 
-  static S find<S>({
+  S find<S>({
     String? tag,
   }) {
     final key = _buildKey<S>(tag);
@@ -62,7 +70,7 @@ abstract class Locators {
     }
   }
 
-  static void delete<S>({
+  void delete<S>({
     String? tag,
   }) {
     final key = _buildKey<S>(tag);
@@ -77,7 +85,7 @@ abstract class Locators {
     }
   }
 
-  static void deleteByKey(String key) {
+  void deleteByKey(String key) {
     if (containsKey(key: key)) {
       container.remove(key);
     } else {
@@ -85,7 +93,7 @@ abstract class Locators {
     }
   }
 
-  static void clear() {
+  void clear() {
     final keys = container.keys.toList();
     for (final key in keys) {
       deleteByKey(key);
@@ -93,7 +101,7 @@ abstract class Locators {
   }
 
   /// Injects the Instance [S] builder into the `_singleton` HashMap.
-  static void _insert<I>(
+  void _insert<I>(
     DependencyManager<I> manager, {
     String? tag,
     bool force = false,

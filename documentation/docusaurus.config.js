@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Flutter Queen",
-  tagline: "Queen Support for Flutter framework",
+  title: "👑 Flutter Queen ",
+  tagline: "Save Time 🕒 , Effort 💪 and Focus on What Matters (Your App)🤝📈",
   url: "https://flutterqueen.github.io",
   baseUrl: "/queen/",
   onBrokenLinks: "throw",

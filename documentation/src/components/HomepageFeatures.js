@@ -7,16 +7,19 @@ const FeatureList = [
     title: "Easy to Use",
     Svg: require("../../static/img/logo.svg").default,
     description: (
-      <>Designed to make app development simpler , easier , faster </>
+      <>
+        Designed to make development easier , faster , with minimum amount of
+        code you
+      </>
     ),
   },
   {
-    title: "Focus on What Matters",
+    title: "Productivity",
     Svg: require("../../static/img/logo.svg").default,
     description: (
       <>
-        lets you focus on Your app requirements and business logic more not on
-        the redundant features
+        localization , navigation , Service locator , themes , dev-tool , utils
+        , ...etc shipped and ready out of the box
       </>
     ),
   },
@@ -26,24 +29,32 @@ const FeatureList = [
     description: (
       <>
         under the hood it is just a collection of packages that works well
-        together
+        together , you can use any dart/flutter package you want
       </>
     ),
   },
+
+  {
+    title: "Focus on What Matters",
+    Svg: require("../../static/img/logo.svg").default,
+    description: (
+      <>
+        queen makes it easy to focus on Your app requirements and business logic
+        more , not on the redundant features
+      </>
+    ),
+  },
+
   {
     title: "State Management agnostic",
     Svg: require("../../static/img/logo.svg").default,
     description: <>Use What ever works for you, queen will not judge</>,
   },
-  {
-    title: "Support all platforms",
-    Svg: require("../../static/img/logo.svg").default,
-    description: <>no matter where you are deploying queen support it</>,
-  },
+
   {
     title: "LightHouse 💡",
     Svg: require("../../static/img/logo.svg").default,
-    description: <>it comes with a very simple `CLI` to make it even simpler</>,
+    description: <>it comes with a very simple `CLI` to give it a boost</>,
   },
 ];
 

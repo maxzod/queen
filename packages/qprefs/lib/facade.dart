@@ -53,19 +53,28 @@ abstract class Prefs {
   ) =>
       getIntOrNull(key) ?? def;
 
+  static Future<void> setInt(
+    String key,
+    int value,
+  ) =>
+      _prefs.setInt(key, value);
+
   static int getIntOrZero(
     String key,
   ) =>
       getIntOrNull(key) ?? 0;
 
   ///  return `bool` by key if exist return True else false
-
   static bool? getBoolOrNull(
     String key,
   ) =>
       _prefs.getBool(key);
 
-  static bool getBoolOr(String key, bool def) => _prefs.getBool(key) ?? def;
+  static bool getBoolOr(
+    String key,
+    bool def,
+  ) =>
+      _prefs.getBool(key) ?? def;
 
   static bool getBoolOrFalse(
     String key,
@@ -76,12 +85,6 @@ abstract class Prefs {
     String key,
   ) =>
       getBoolOr(key, false);
-
-  static Future<void> setInt(
-    String key,
-    int value,
-  ) =>
-      _prefs.setInt(key, value);
 
   static Future<void> setBool(
     String key,
@@ -104,13 +107,13 @@ abstract class Prefs {
   ) =>
       setString(key, jsonEncode(map));
 
-  static Map<String, Object?> findMany(Iterable<String> keys) {
-    final result = <String, Object?>{};
-    for (final key in keys) {
-      result[key] = find(key);
-    }
-    return result;
-  }
+  // static Map<String, Object?> findMany(Iterable<String> keys) {
+  //   final result = <String, Object?>{};
+  //   for (final key in keys) {
+  //     result[key] = find(key);
+  //   }
+  //   return result;
+  // }
 
   // static Future<void> setMany(Map<String, Object> data) {
   //   for (final key in data.keys) {
@@ -119,10 +122,10 @@ abstract class Prefs {
   //   return result;
   // }
 
-  static Object? find(
-    String key,
-  ) =>
-      _prefs.get(key);
+  // static Object? find(
+  //   String key,
+  // ) =>
+  //     _prefs.get(key);
 
   /// clear the share preferences
   /// TODO ::: safe attributes
