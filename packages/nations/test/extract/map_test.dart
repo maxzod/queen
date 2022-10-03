@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nations/src/extract/base.dart';
+import 'package:nations/src/extracted_data.dart';
 
 void main() {
   test('it will return not found when plural with empty map', () {

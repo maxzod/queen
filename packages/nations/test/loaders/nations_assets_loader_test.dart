@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nations/src/loaders/nation_assets.dart';
+import 'package:nations/nations.dart';
 
 void main() {
   test('it return empty map if the locale is not supported', () {

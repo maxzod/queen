@@ -1,5 +1,3 @@
-import 'package:locators/locators.dart';
-
 abstract class DependencyManager<S>
 // with LifeCycleManager
 {

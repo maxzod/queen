@@ -5,7 +5,7 @@ homepage: https://github.com/FlutterQueen/nations
 issue_tracker: https://github.com/FlutterQueen/nations/issues
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -14,7 +14,8 @@ dependencies:
   flutter_readable: ^0.0.2
   nations_assets: ^0.0.1
   qprefs: 0.0.1
-  queen: 0.0.1
+  qcore: 0.0.1
+  locators: 0.0.1
 
 dependency_overrides:
   platform: 3.1.0

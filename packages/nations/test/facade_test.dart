@@ -1,12 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:queen/queen.dart';
+import 'package:locators/locators.dart';
 
 Future<void> main() async {
   setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
   });
   setUp(() async {
-    await App.boot();
+    // await App.boot();
   });
   tearDown(() {
     Locators.clear();

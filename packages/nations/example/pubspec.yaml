@@ -15,9 +15,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
     version: ^0.0.0
-  nations:
-    path: ../
-
+  nations: 0.0.1
+  qcore: 0.0.1
+dependency_overrides:
+  platform: ^3.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -3,20 +3,25 @@ import 'launcher.dart';
 /// boots series launchers
 /// then boots all parallel launchers
 Future<void> bootLaunchers(List<Launcher> launchers) async {
-  final parallel = <Launcher>[];
-  final series = <Launcher>[];
+  await RootLauncher(launchers).boot();
 
-  for (final launcher in launchers) {
-    (launcher.shouldRunInParallel ? parallel : series).add(launcher);
-  }
+  // final parallel = <Launcher>[];
+  // final series = <Launcher>[];
 
-  for (final sLauncher in series) {
-    await sLauncher.boot();
-  }
+  // for (final launcher in launchers) {
+  //   (launcher.shouldRunInParallel ? parallel : series).add(launcher);
+  // }
 
-  await Future.wait(
-    parallel.map(
-      (e) async => await e.boot(),
-    ),
-  );
+  // for (final sLauncher in series) {
+  //   if (sLauncher.dependsOn().isNotEmpty) {
+  //     await bootLaunchers(sLauncher.dependsOn());
+  //   }
+  //   await sLauncher.boot();
+  // }
+
+  // await Future.wait(
+  //   parallel.map(
+  //     (e) async => await e.boot(),
+  //   ),
+  // );
 }

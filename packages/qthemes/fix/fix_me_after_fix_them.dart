@@ -1,12 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:qthemes/qthemes.dart';
-import 'package:queen/queen.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() async {
-    await App.boot();
+    // await App.boot();
   });
   tearDown(() async {
     // await App.dispose();

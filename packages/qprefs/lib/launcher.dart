@@ -9,4 +9,7 @@ class PrefsLauncher extends Launcher {
       await SharedPreferences.getInstance(),
     );
   }
+
+  @override
+  bool get shouldRunInParallel => false;
 }

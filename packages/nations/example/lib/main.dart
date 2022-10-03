@@ -1,13 +1,21 @@
+import 'package:example/config/lang.dart';
 import 'package:example/page2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nations/nations.dart';
+import 'package:qcore/qcore.dart';
 
 Future<void> main() async {
-  // TODO :: (2)
-  // await Nations.boot();
-  // runApp(
-  // QueenBuilder(builder: (ctx) => const MyApp()),
-  // );
+  WidgetsFlutterBinding.ensureInitialized();
+  await bootLaunchers([
+    PrefsLauncher(),
+    LangLauncher(AppLangConfig()),
+  ]);
+  runApp(
+    LangBuilder(
+      builder: (ctx) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,6 +30,11 @@ class MyApp extends StatelessWidget {
       // localizationsDelegates: Nations.delegates,
       supportedLocales: AppLang.supportedLocales,
       builder: (context, child) => child!,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
 
       /// end ot Nations params
       home: const MySc(),

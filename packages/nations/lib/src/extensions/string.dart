@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:nations/src/extract/base.dart';
-import 'package:queen/queen.dart';
+import 'package:locators/locators.dart';
+import 'package:nations/nations.dart';
+import 'package:nations/src/extracted_data.dart';
 
 /// string translation extension
 extension NationsTrans on String {

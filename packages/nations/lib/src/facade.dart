@@ -1,7 +1,5 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
-import 'package:queen/queen.dart';
+import 'package:locators/locators.dart';
+import 'package:nations/nations.dart';
 
 /// facilitate controlling the localization process
 abstract class AppLang {

@@ -1,14 +1,22 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:locators/locators.dart';
+import 'package:nations/nations.dart';
+import 'package:qcore/qcore.dart';
+
+import '../config_test.dart';
 
 void main() {
-  // setUpAll(() async {
-  //   TestWidgetsFlutterBinding.ensureInitialized();
-  //   await App.boot(nationsConfig: NotFoundTestConfig());
-  //   await AppLang.update(const Locale('ar'));
-  // });
-  // tearDownAll(() {
-  //   Locators.clear();
-  // });
+  setUpAll(() async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    await bootLaunchers([
+      PrefsLauncher(),
+      LangLauncher(NotFoundTestConfig()),
+    ]);
+    await AppLang.update(const Locale('ar'));
+  });
+  tearDownAll(() {
+    Locators.clear();
+  });
   test('_', () => expect(true, isTrue));
   // group('not found tests', () {
   //   test('it return the not found def value if is null', () {

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:nations/nations.dart';
 
 class AppLangConfig extends LangConfig {
