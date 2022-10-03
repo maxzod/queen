@@ -1,13 +1,11 @@
 ---
-title: Locators
+title: Dependency Management
 sidebar_position: 2
 ---
 
 # Dependency Management
 
-Locators is a [**`Service Locator`**](https://en.wikipedia.org/wiki/Service_locator_pattern) to register and retrieve you dependencies without `BuildContext`
-
-note :: you can this package without queen
+[**`Locators`**](https://pub.dev/pacakges/locators) is a [**`Service Locator`**](https://en.wikipedia.org/wiki/Service_locator_pattern) to register and retrieve you dependencies without `BuildContext` or any thing you only need the `Type` for the object you want and maybe need a tag
 
 ```dart
 /// register
@@ -38,6 +36,9 @@ create the object now and register it
 ```dart
 Locators.put<FooClass>(FooClass());
 ```
+
+:::tip use tag if you need to put or find 2 objects of the same type
+:::
 
 ### putLazy (lazyLoad dependencies)
 

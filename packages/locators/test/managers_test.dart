@@ -7,13 +7,13 @@ void main() {
     'LifeCycleManager',
     () {
       test(
-        'it calls onInit with SingletoneManger always',
+        'it calls onInit with SingletonManger always',
         () {},
       );
     },
   );
   group(
-    'SingletoneManger',
+    'SingletonManger',
     () {
       test(
         'it return the same instance always',
@@ -27,7 +27,7 @@ void main() {
   );
 
   group(
-    'LazySingletoneManager',
+    'LazySingletonManager',
     () {
       test(
         'it does not build until build calls',
@@ -41,7 +41,7 @@ void main() {
     },
   );
   group(
-    'FactroyManager',
+    'FactoryManager',
     () {
       test(
         'it builds new object every time',
