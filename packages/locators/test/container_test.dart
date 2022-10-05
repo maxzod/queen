@@ -28,22 +28,23 @@ void main() {
       test(
         'it return true if container a instance',
         () {
-          LocatorsBase.container['String'] = TestInstance();
+          Locators.put<TestInstance>(TestInstance());
+
           expect(
-            Locators.contains<String>(),
+            Locators.contains<TestInstance>(),
             isTrue,
-            reason: 'it contains a String',
+            reason: 'it contains a TestInstance',
           );
         },
       );
       test(
         'it return true if contains instance with TAG',
         () {
-          LocatorsBase.container['StringFoo'] = TestInstance();
+          Locators.put(TestInstance(), tag: 'StringFoo');
           expect(
-            Locators.contains<String>(tag: 'foo'),
+            Locators.contains<TestInstance>(tag: 'StringFoo'),
             isTrue,
-            reason: 'it contains a String with foo tag',
+            reason: 'it contains a String with StringFoo tag',
           );
         },
       );

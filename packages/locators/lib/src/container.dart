@@ -11,10 +11,10 @@ class LocatorsBase {
 
   String _buildKey<T>(String? tag) => '$T${tag ?? ''}';
 
-  bool contains<S>({
+  bool contains<T>({
     String? tag,
   }) =>
-      container.containsKey(_buildKey<S>(tag));
+      container.containsKey(_buildKey<T>(tag));
 
   bool containsKey({
     String? key,
@@ -116,7 +116,7 @@ cant put in the container type already exists
  - use force
 ''';
     }
-
+    // todo :: dispose before replace
     container[key] = manager;
   }
 }

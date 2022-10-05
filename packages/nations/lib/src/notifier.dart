@@ -3,54 +3,36 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_readable/flutter_readable.dart';
 import 'package:nations/nations.dart';
+import 'package:nations/src/helpers/locale.dart';
 import 'package:qprefs/qprefs.dart';
 
 const _kPrefsKey = 'queen.nations.lang';
 
 /// nations base class
 class TransController extends ChangeNotifier {
-  ///
-  TransController({
-    required this.config,
-  });
+  /// * current locale
+  @protected
+  @visibleForTesting
+  late Locale currentLocale;
 
-  ///
-  final LangConfig config;
-
-  late Locale _currentLocale;
-
-  final Map<String, Object?> _translations = {};
-
-  /// * get the current locale
-  Locale get locale => _currentLocale;
-
-  /// * return the supported locales list from the config
-  List<Locale> get supportedLocales => config.supportedLocales;
-
-  /// return the loaded translations
-  Map<String, Object?> get translations => _translations;
+  /// * loaded locale translations
+  @protected
+  @visibleForTesting
+  final Map<String, Object?> translations = {};
 
   /// set up Nations controller
-  Future<void> boot() async {
-    final _savedLocaleKey = Prefs.getStringOrNull(_kPrefsKey);
-
-    /// if there is a save locale and still supported use it
-    if (_savedLocaleKey != null && Locale(_savedLocaleKey).isSupported) {
-      _currentLocale = Locale(_savedLocaleKey);
-
-      /// if no check if the device locale is supported or not
-    } else if (window.locale.isSupported) {
-      _currentLocale = window.locale;
-    } else {
-      _currentLocale = config.fallbackLocale;
-    }
-
-    await load(locale);
-  }
+  Future<void> boot() async => load(
+        localeToUse(
+          fallback: AppLang.fallbackLocale,
+          supportedLocales: AppLang.supportedLocales,
+          savedKey: Prefs.getStringOrNull(_kPrefsKey),
+          windowLocale: window.locale,
+        ),
+      );
 
   /// * updates the current locale the restart the app (notify the root builder)
   Future<void> updateLocale(Locale locale) async {
-    _currentLocale = locale;
+    currentLocale = locale;
     await Prefs.setString(_kPrefsKey, locale.toString());
     await load(locale);
   }
@@ -62,18 +44,18 @@ class TransController extends ChangeNotifier {
     /// for each loader add the values to the translation map
     final _app = <String, Object?>{};
 
-    for (final loader in config.loaders) {
+    for (final loader in AppLang.config.loaders) {
       _app[loader.name] = await loader.load(locale);
     }
 
     _app.addAll(const NationsAssetsLoader().load(locale));
-    final baseData = await config.baseLoader.load(locale);
+    final baseData = await AppLang.config.baseLoader.load(locale);
 
     final result = mergeTwoMaps(_app, baseData)?.cast<String, Object?>();
 
     /// * clear the old translations
 
-    _translations
+    translations
       ..clear()
       ..addAll(result ?? {});
 

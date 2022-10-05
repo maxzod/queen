@@ -7,7 +7,14 @@ abstract class AppLang {
   static TransController get _controller => find<TransController>();
 
   /// * return the current locale
-  static Locale get current => _controller.locale;
+  static Locale get current => _controller.currentLocale;
+
+  static Locale get fallbackLocale => config.fallbackLocale;
+
+  static Map<String, Object?> get translations => _controller.translations;
+
+  /// * return current `LangConfig`
+  static LangConfig get config => find<LangConfig>();
 
   /// * return true if the current locale == the parameter
   static bool equals(Locale locale) => current == locale;
@@ -22,8 +29,7 @@ abstract class AppLang {
   static String get name => current.toString();
 
   /// * return supported `Locale` list
-  static List<Locale> get supportedLocales =>
-      _controller.config.supportedLocales;
+  static List<Locale> get supportedLocales => config.supportedLocales;
 
   /// * update a locale
   static Future<void> update(
