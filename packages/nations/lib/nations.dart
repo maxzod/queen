@@ -25,7 +25,6 @@ export 'src/helpers/string.dart';
 export 'src/helpers/string.dart';
 export 'src/launcher.dart';
 export 'src/loaders.dart';
-export 'src/notifier.dart';
 
 /// * model
 // export 'src/models/config.dart';

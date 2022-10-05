@@ -1,15 +1,9 @@
-import 'dart:ui';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_readable/flutter_readable.dart';
-import 'package:nations/nations.dart';
-import 'package:nations/src/helpers/locale.dart';
-import 'package:qprefs/qprefs.dart';
+part of 'facade.dart';
 
 const _kPrefsKey = 'queen.nations.lang';
 
 /// nations base class
-class TransController extends ChangeNotifier {
+class TransNotifier extends ChangeNotifier {
   /// * current locale
   @protected
   @visibleForTesting

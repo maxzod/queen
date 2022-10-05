@@ -31,14 +31,14 @@ class QThemeBuilderState extends State<QueenBuilder> {
     // * watch theme changes
     // Locators.find<ThemeController>().addListener(_changeListener);
     // * watch locale changes
-    Locators.find<TransController>().addListener(_changeListener);
+    Locators.find<TransNotifier>().addListener(_changeListener);
     super.initState();
   }
 
   @override
   void dispose() {
     // Locators.find<ThemeController>().removeListener(_changeListener);
-    Locators.find<TransController>().removeListener(_changeListener);
+    Locators.find<TransNotifier>().removeListener(_changeListener);
     super.dispose();
   }
 

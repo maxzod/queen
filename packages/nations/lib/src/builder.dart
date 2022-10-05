@@ -22,13 +22,13 @@ class _LangBuilderState extends State<LangBuilder> {
   void initState() {
     _changeListener = () => mounted ? setState(() {}) : () {};
     // * watch locale changes
-    find<TransController>().addListener(_changeListener);
+    find<TransNotifier>().addListener(_changeListener);
     super.initState();
   }
 
   @override
   void dispose() {
-    find<TransController>().removeListener(_changeListener);
+    find<TransNotifier>().removeListener(_changeListener);
     super.dispose();
   }
 
