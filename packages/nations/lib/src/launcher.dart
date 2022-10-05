@@ -15,7 +15,7 @@ class LangLauncher extends Launcher {
   @override
   FutureOr<void> boot() async {
     Locators.put<LangConfig>(config);
-    final _transController = TransController();
+    final _transController = TransNotifier();
     Locators.put(_transController);
     await _transController.boot();
   }
