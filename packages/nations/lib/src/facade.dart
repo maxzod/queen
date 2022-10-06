@@ -1,10 +1,8 @@
-import 'package:locators/locators.dart';
-import 'package:nations/nations.dart';
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_readable/flutter_readable.dart';
+import 'package:locators/locators.dart';
 import 'package:nations/nations.dart';
 import 'package:nations/src/helpers/locale.dart';
 import 'package:qprefs/qprefs.dart';
@@ -17,7 +15,9 @@ abstract class AppLang {
   static TransNotifier get _controller => find<TransNotifier>();
 
   /// * return the current locale
-  static Locale get current => _controller.currentLocale;
+  static Locale get current =>
+      _controller.currentLocale ??
+      (throw 'cant get current locale before booting the lang');
 
   static Locale get fallbackLocale => config.fallbackLocale;
 

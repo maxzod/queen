@@ -10,13 +10,14 @@ class LangLauncher extends Launcher {
   /// initial config
   final LangConfig config;
 
+  /// creates new lang launcher with the config
   const LangLauncher(this.config);
 
   @override
   FutureOr<void> boot() async {
     Locators.put<LangConfig>(config);
-    final _transController = TransNotifier();
-    Locators.put(_transController);
-    await _transController.boot();
+    final trNotifier = TransNotifier();
+    Locators.put(trNotifier);
+    return trNotifier.boot();
   }
 }

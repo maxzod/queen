@@ -18,21 +18,21 @@ void main() {
     Locators.clear();
   });
   test('_', () => expect(true, isTrue));
-  // group('not found tests', () {
-  //   test('it return the not found def value if is null', () {
-  //     expect('fooBarZee'.tr, equals('not_found'));
-  //     expect('fooBarZee'.gender, equals('not_found_gender'));
-  //     expect('fooBarZee'.trMale, equals('not_found_gender_male'));
-  //     expect('fooBarZee'.trFemale, equals('not_found_gender_female'));
-  //     expect('fooBarZee'.args({}), equals('not_found_args'));
-  //     expect('fooBarZee'.plural(50), equals('not_found_plural'));
-  //   });
+  group('not found tests', () {
+    test('it return the not found def value if is null', () {
+      expect('fooBarZee'.tr, equals('not_found'));
+      expect('fooBarZee'.gender, equals('not_found_gender'));
+      expect('fooBarZee'.trMale, equals('not_found_gender_male'));
+      expect('fooBarZee'.trFemale, equals('not_found_gender_female'));
+      expect('fooBarZee'.args({}), equals('not_found_args'));
+      expect('fooBarZee'.plural(50), equals('not_found_plural'));
+    });
 
-  //   test('it return not found def value if the parent exist and the child not',
-  //       () {
-  //     expect('gender.bar'.tr, equals('not_found'));
-  //   });
-  // });
+    //   test('it return not found def value if the parent exist and the child not',
+    //       () {
+    //     expect('gender.bar'.tr, equals('not_found'));
+    //   });
+  });
   // test('it translate simple key', () {
   //   expect('yes'.tr, equals('نعم'));
   // });

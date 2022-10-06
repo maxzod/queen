@@ -7,22 +7,25 @@ import 'package:flutter/services.dart';
 /// * if the locale doesn't exist in your assets it will try to get
 /// * the file named with the language code
 /// * if also is empty it will loads the fallback locale
-Future<Map<String, dynamic>?> loadLocaleTranslation(Locale locale) async {
+Future<Map<String, dynamic>> loadLocaleTranslation(Locale locale) async {
   return loadJsonFileContent('assets/lang/$locale.json');
+}
+
+Future<Map<String, dynamic>> loadLocaleTranslationForPackage(
+  String pkgName,
+  Locale locale,
+) async {
+  return loadJsonFileContent('packages/$pkgName/assets/lang/$locale.json');
 }
 
 /// *  load the locale from json files
 /// *  why null ?
 ///  because the file might be corrupted some how
 ///  or missing a comma in the end !
-Future<Map<String, dynamic>?> loadJsonFileContent(String path) async {
-  try {
-    // *  parse it to string
-    return json.decode(
-      /// * load content
-      await rootBundle.loadString(path),
-    ) as Map<String, dynamic>?;
-  } catch (_) {
-    return null;
-  }
+Future<Map<String, dynamic>> loadJsonFileContent(String path) async {
+  // *  parse it to string
+  return json.decode(
+    /// * load content
+    await rootBundle.loadString(path),
+  ) as Map<String, dynamic>;
 }

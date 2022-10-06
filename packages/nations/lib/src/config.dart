@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/foundation.dart';
 
 import '../nations.dart';
@@ -22,6 +24,9 @@ class LangConfig {
 
   /// which locale to use in case of failure
   final Locale fallbackLocale;
+
+  /// which locale to use in case of failure
+  Locale get firstTimeLocale => window.locale;
 
   /// loads the app translations
   final NationsLoader baseLoader;

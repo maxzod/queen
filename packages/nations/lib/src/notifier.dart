@@ -7,7 +7,7 @@ class TransNotifier extends ChangeNotifier {
   /// * current locale
   @protected
   @visibleForTesting
-  late Locale currentLocale;
+  Locale? currentLocale;
 
   /// * loaded locale translations
   @protected
@@ -15,14 +15,15 @@ class TransNotifier extends ChangeNotifier {
   final Map<String, Object?> translations = {};
 
   /// set up Nations controller
-  Future<void> boot() async => load(
-        localeToUse(
-          fallback: AppLang.fallbackLocale,
-          supportedLocales: AppLang.supportedLocales,
-          savedKey: Prefs.getStringOrNull(_kPrefsKey),
-          windowLocale: window.locale,
-        ),
-      );
+  Future<void> boot() async {
+    currentLocale = localeToUse(
+      fallback: AppLang.fallbackLocale,
+      supportedLocales: AppLang.supportedLocales,
+      savedKey: Prefs.getStringOrEmpty(_kPrefsKey),
+      firstTimeLocale: AppLang.config.firstTimeLocale,
+    );
+    await load(currentLocale!);
+  }
 
   /// * updates the current locale the restart the app (notify the root builder)
   Future<void> updateLocale(Locale locale) async {
