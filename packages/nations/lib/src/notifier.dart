@@ -20,7 +20,7 @@ class TransNotifier extends ChangeNotifier {
       fallback: AppLang.fallbackLocale,
       supportedLocales: AppLang.supportedLocales,
       savedKey: Prefs.getStringOrEmpty(_kPrefsKey),
-      firstTimeLocale: AppLang.config.firstTimeLocale,
+      firstTimeLocale: AppLang.firstTimeLocale,
     );
     await load(currentLocale!);
   }

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_readable/flutter_readable.dart';
 import 'package:locators/locators.dart';
@@ -19,6 +17,7 @@ abstract class AppLang {
       _controller.currentLocale ??
       (throw 'cant get current locale before booting the lang');
 
+  static Locale get firstTimeLocale => config.fallbackLocale;
   static Locale get fallbackLocale => config.fallbackLocale;
 
   static Map<String, Object?> get translations => _controller.translations;
