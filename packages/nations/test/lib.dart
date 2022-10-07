@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
 
 import 'package:nations/nations.dart';
 
@@ -12,10 +11,17 @@ class NationsTestLoader extends NationsLoader {
   FutureOr<Map<String, Object?>> load(Locale locale) {
     return data ??
         {
-          "gender": {"this": "الجنس", "male": "ذكر", "female": "انثي"},
+          "gender": {
+            "this": "الجنس",
+            "male": "ذكر",
+            "female": "انثي",
+          },
           'test_k': 'test_v',
           'args_key': "اهلا بك يا :name",
-          "person": {"male": "سيدي", "female": "سيدتي"},
+          "person": {
+            "male": "سيدي",
+            "female": "سيدتي",
+          },
           "validation": {
             "required": "هذا الحقل مطلوب",
             "email": "البريد الالكتروني غير صحيح",

@@ -12,10 +12,10 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_readable: ^0.0.2
-  nations_assets: ^0.0.1
-  qprefs: 0.0.1
-  qcore: 0.0.1
   locators: 0.0.1
+  nations_assets: ^0.0.1
+  qcore: 0.0.1
+  qprefs: 0.0.1
 
 dependency_overrides:
   platform: 3.1.0
