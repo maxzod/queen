@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:qthemes/qthemes.dart';
 import 'package:queen/queen.dart';
 
-class QThemeLauncher extends Launcher {
+class  ThemeLauncher extends Launcher {
   final ThemeConfig config;
 
-  QThemeLauncher(this.config);
+  ThemeLauncher(this.config);
 
   @override
   FutureOr<void> boot() async => Locators.put<ThemeController>(

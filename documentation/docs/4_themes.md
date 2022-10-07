@@ -3,28 +3,50 @@ title: Themes
 sidebar_position: 4
 ---
 
+- [build your themes](#build-your-themes)
+  - [boot the theme](#boot-the-theme)
+    - [switch to the next theme](#switch-to-the-next-theme)
+    - [switch to specific theme by index](#switch-to-specific-theme-by-index)
+    - [get current theme](#get-current-theme)
+    - [get current theme index](#get-current-theme-index)
+
 ## introduction
 
-with `qthmes` you can support in app themes with :
+modern apps must have light and dark theme at least , also might need more than one light/dark theme the ability and make users able to switch between themes with in the app not just stick to the OS choices , persist the chosen theme and use next the the app opens
 
-- automatic reload not state management needed 🔥
-- support multiples themes (not just one dark and other is light but as many themes as you need) 🎨
-- switch between them in the run time 🔁
-- automatic persistance to last picked theme 💾
-- support for (`debugbar`) soon 🛠
-- access theme with or without context both recreance to same object
+all of that is ready and more features to boost the theming process
 
-## Get Started
+# build your themes
 
-### Config
+at `config/theme.dart` add your brand themes
 
-- inside config folder create theme file `theme.dart`
-- extend `QThemeConfig`
-- override `themes` field and add your own themes list
+```dart
+class AppThemeConfig extends ThemeConfig {
 
-### booting
+  /// * List of available thames
+  /// you can add as many themes as you need there is no limit but at least must have one
+  @override
+  List<QTheme> get themes => [
+        QTheme(
+          id: 'dark',
+          name: 'Dark',
+          theme: ThemeData.dark(),
+        ),
+        QTheme(
+          id: 'light',
+          name: 'Light',
+          theme: ThemeData.light(),
+        ),
+      ];
+}
 
-add `QThemeLauncher` to app lunchers list and inside the constructor give it your config
+```
+
+## boot the theme
+
+inside the launchers list do not forgot to add your config file to the Themes
+
+add `ThemeLauncher` to app lunchers list and inside the constructor give it your config object
 
 ### switch to the next theme
 
