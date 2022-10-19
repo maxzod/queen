@@ -8,7 +8,7 @@
 dependencies:
   queen:
     git:
-      url: https://github.com/FlutterQueen/queen.git
+      url: https://github.com/maxzod/queen.git
       ref: 19ac2497cec159d6c62bb2fe82123dc688693228
 ```
 
