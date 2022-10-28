@@ -51,7 +51,7 @@ void main() {
       test(
         'it return false if contains instance with TAG but did not use the tag',
         () {
-          LocatorsBase.container['StringBar'] = TestInstance();
+          Locators.container['StringBar'] = TestInstance();
           expect(
             Locators.contains<String>(),
             isFalse,
@@ -70,7 +70,7 @@ void main() {
           expect(Locators.contains<String>(), isFalse);
           Locators.put<String>('');
           expect(
-            LocatorsBase.container['String'] is SingletonManger,
+            Locators.container['String'] is SingletonManger,
             isTrue,
           );
         },
@@ -103,7 +103,7 @@ void main() {
           expect(Locators.contains<String>(), isFalse);
           Locators.putLazy<String>(() => '');
           expect(
-            LocatorsBase.container['String'] is LazySingletonManager,
+            Locators.container['String'] is LazySingletonManager,
             isTrue,
           );
         },
@@ -136,7 +136,7 @@ void main() {
           expect(Locators.contains<String>(), isFalse);
           Locators.factory<String>(() => '');
           expect(
-            LocatorsBase.container['String'] is FactoryManager,
+            Locators.container['String'] is FactoryManager,
             isTrue,
           );
         },
