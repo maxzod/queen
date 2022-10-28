@@ -1,0 +1,54 @@
+# Generated file - do not commit this file.
+{
+  "name": "example",
+  "version": "1.0.0+1",
+  "publish_to": "none",
+  "environment": {
+    "sdk": ">=2.12.0 <3.0.0"
+  },
+  "description": "A new Flutter project.",
+  "dependencies": {
+    "cupertino_icons": "^1.0.2",
+    "flutter": {
+      "sdk": "flutter"
+    },
+    "flutter_localizations": {
+      "sdk": "flutter"
+    },
+    "nations": "0.0.1",
+    "qcore": "0.0.1"
+  },
+  "dev_dependencies": {
+    "flutter_test": {
+      "sdk": "flutter"
+    },
+    "lint": "^1.0.0"
+  },
+  "dependency_overrides": {
+    "platform": "^3.1.0",
+    "flutter_readable": {
+      "path": "..\\\\..\\\\flutter_readable"
+    },
+    "locators": {
+      "path": "..\\\\..\\\\locators"
+    },
+    "nations": {
+      "path": ".."
+    },
+    "qcore": {
+      "path": "..\\\\..\\\\qcore"
+    },
+    "qprefs": {
+      "path": "..\\\\..\\\\qprefs"
+    },
+    "readable": {
+      "path": "..\\\\..\\\\readable"
+    }
+  },
+  "flutter": {
+    "uses-material-design": true,
+    "assets": [
+      "assets/lang/"
+    ]
+  }
+}

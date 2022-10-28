@@ -1,0 +1,51 @@
+# Generated file - do not commit this file.
+{
+  "name": "qthemes",
+  "version": "0.0.1",
+  "environment": {
+    "sdk": ">=2.18.0 <3.0.0",
+    "flutter": ">=1.17.0"
+  },
+  "description": "A new Flutter package project.",
+  "dependencies": {
+    "flutter": {
+      "sdk": "flutter"
+    },
+    "equatable": "^2.0.3",
+    "queen": "0.0.1",
+    "qprefs": "0.0.1"
+  },
+  "dev_dependencies": {
+    "flutter_test": {
+      "sdk": "flutter"
+    }
+  },
+  "dependency_overrides": {
+    "flutter_readable": {
+      "path": "..\\\\flutter_readable"
+    },
+    "locators": {
+      "path": "..\\\\locators"
+    },
+    "nations": {
+      "path": "..\\\\nations"
+    },
+    "qcore": {
+      "path": "..\\\\qcore"
+    },
+    "qprefs": {
+      "path": "..\\\\qprefs"
+    },
+    "queen": {
+      "path": "..\\\\queen"
+    },
+    "queen_validators": {
+      "path": "..\\\\validators"
+    },
+    "readable": {
+      "path": "..\\\\readable"
+    }
+  },
+  "lint": "^1.10.0",
+  "flutter": null
+}

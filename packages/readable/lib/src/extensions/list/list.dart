@@ -16,4 +16,7 @@ extension RList<T> on List<T?> {
 
   /// if the list contains `item` will remove it else will add it
   void toggle(T item) => contains(item) ? remove(item) : add(item);
+
+  /// remove first element of the list
+  T? removeFirst() => removeAt(0);
 }
