@@ -2,12 +2,12 @@ import 'package:meta/meta.dart';
 import 'package:locators/locators.dart';
 
 // ignore: non_constant_identifier_names
-final Locators = LocatorsBase();
+final Locators = LocatorsContainer();
 
-class LocatorsBase {
+class LocatorsContainer {
   @protected
   @visibleForTesting
-  static final container = <String, DependencyManager>{};
+  final container = <String, DependencyManager>{};
 
   String _buildKey<T>(String? tag) => '$T${tag ?? ''}';
 
