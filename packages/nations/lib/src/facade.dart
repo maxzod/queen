@@ -22,14 +22,19 @@ abstract class AppLang {
   /// * return the current window locale
   static Locale get window => ui.window.locale;
 
-  static Locale get firstTimeLocale => config.fallbackLocale;
+  /// * return first time locale
+  static Locale get firstTimeLocale => config.firstTimeLocale;
 
+  /// * return fallback locale
   static Locale get fallbackLocale => config.fallbackLocale;
 
+  /// return loaded locale translation assets
   static Map<String, Object?> get translations => _controller.translations;
 
   /// * return current `LangConfig`
   static LangConfig get config => find<LangConfig>();
+
+  /// * base translation loader
   static NationsLoader get baseLoader => config.baseLoader;
 
   /// * return true if the current locale == the parameter

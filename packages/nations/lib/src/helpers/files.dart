@@ -11,6 +11,7 @@ Future<Map<String, dynamic>> loadLocaleTranslation(Locale locale) async {
   return loadJsonFileContent('assets/lang/$locale.json');
 }
 
+/// load package translation assets
 Future<Map<String, dynamic>> loadLocaleTranslationForPackage(
   String pkgName,
   Locale locale,

@@ -17,7 +17,7 @@ class TransNotifier extends ChangeNotifier {
   /// *  set up Nations controller
   Future<void> boot() async {
     currentLocale = localeToUse(
-      fallback: AppLang.fallbackLocale,
+      fallback: AppLang.firstTimeLocale,
       supportedLocales: AppLang.supportedLocales,
       savedKey: Prefs.getStringOrEmpty(_kPrefsKey),
       firstTimeLocale: AppLang.firstTimeLocale,

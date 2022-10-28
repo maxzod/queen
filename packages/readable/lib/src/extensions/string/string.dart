@@ -62,7 +62,10 @@ extension RString on String {
   /// * return `null` if isEmpty
   String? get lastOrNull => isEmpty ? null : this[length - 1];
 
+  /// return last element or the default value
   String? lastOr(String def) => lastOrNull ?? def;
+
+  /// return last or  calls if Absent
 
   String? lastOrIfAbsent(String Function() ifAbsent) =>
       lastOrNull ?? ifAbsent();
@@ -74,7 +77,10 @@ extension RString on String {
   /// * return `null` if isEmpty
   String? get firstOrNull => isEmpty ? null : this[0];
 
+  /// return first or  default value
   String? firstOr(String def) => firstOrNull ?? def;
+
+  /// return first or  calls if Absent
 
   String? firstOrIfAbsent(String Function() ifAbsent) =>
       firstOrNull ?? ifAbsent();

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:qthemes/qthemes.dart';
 import 'package:queen/queen.dart';
 
-class  ThemeLauncher extends Launcher {
+class ThemeLauncher extends Launcher {
   final ThemeConfig config;
 
   ThemeLauncher(this.config);
