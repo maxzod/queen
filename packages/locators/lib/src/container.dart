@@ -1,64 +1,60 @@
-import 'package:meta/meta.dart';
 import 'package:locators/locators.dart';
+import 'package:locators/src/helpers.dart';
+
+import 'interface.dart';
 
 // ignore: non_constant_identifier_names
 final Locators = LocatorsContainer();
 
-class LocatorsContainer {
-  @protected
-  @visibleForTesting
-  final container = <String, DependencyManager>{};
-
-  String _buildKey<T>(String? tag) => '$T${tag ?? ''}';
-
+class LocatorsContainer extends ContainerInterface {
+  @override
   bool contains<T>({
     String? tag,
   }) =>
-      container.containsKey(_buildKey<T>(tag));
+      container.containsKey(buildKey<T>(tag));
 
+  @override
   bool containsKey({
     String? key,
   }) =>
       container.containsKey(key);
 
+  @override
   void put<I>(
     I dependency, {
     String? tag,
   }) =>
-      _insert(
+      insert(
         SingletonManger<I>(dependency),
         tag: tag,
       );
-  void putAsyncIfAbsent<I>(
-    I dependency, {
-    String? tag,
-  }) =>
-      (throw UnimplementedError());
-
+  @override
   void putLazy<S>(
     S Function() builder, {
     String? tag,
   }) {
-    _insert(
+    insert(
       LazySingletonManager<S>(builder),
       tag: tag,
     );
   }
 
+  @override
   void factory<S>(
     S Function() builder, {
     String? tag,
   }) {
-    _insert(
+    insert(
       FactoryManager<S>(builder),
       tag: tag,
     );
   }
 
+  @override
   S find<S>({
     String? tag,
   }) {
-    final key = _buildKey<S>(tag);
+    final key = buildKey<S>(tag);
     if (contains<S>(tag: tag)) {
       return container[key]!.build() as S;
     }
@@ -70,10 +66,11 @@ class LocatorsContainer {
     }
   }
 
+  @override
   void delete<S>({
     String? tag,
   }) {
-    final key = _buildKey<S>(tag);
+    final key = buildKey<S>(tag);
     if (contains<S>(tag: tag)) {
       container.remove(key);
     } else {
@@ -85,6 +82,7 @@ class LocatorsContainer {
     }
   }
 
+  @override
   void deleteByKey(String key) {
     if (containsKey(key: key)) {
       container.remove(key);
@@ -93,30 +91,11 @@ class LocatorsContainer {
     }
   }
 
+  @override
   void clear() {
     final keys = container.keys.toList();
     for (final key in keys) {
       deleteByKey(key);
     }
-  }
-
-  /// Injects the Instance [S] builder into the `_singleton` HashMap.
-  void _insert<I>(
-    DependencyManager<I> manager, {
-    String? tag,
-    bool force = false,
-  }) {
-    final key = _buildKey<I>(tag);
-
-    if (container.containsKey(key) && !force) {
-      throw '''
-cant put in the container type already exists 
- TO FIX :::
- - change the tag
- - use force
-''';
-    }
-    // todo :: dispose before replace
-    container[key] = manager;
   }
 }
