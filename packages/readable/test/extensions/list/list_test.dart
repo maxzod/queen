@@ -1,4 +1,5 @@
 import 'package:readable/readable.dart';
+import 'package:readable/src/extensions/list/list.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
@@ -153,5 +154,25 @@ void main() {
       return e * 2;
     });
     expect(result, [2, 4, 6, 8, 10]);
+  });
+
+  group('removeFirst', () {
+    test('it throw exeption if list is empty', () {
+      final list = [];
+
+      expect(list.removeFirst, throwsRangeError);
+    });
+    test('it return removed element', () {
+      final list = [1, 2, 3, 4, 5];
+      final firstElement = list.first;
+      final removedElement = list.removeFirst();
+      expect(firstElement, removedElement);
+    });
+    test('it remove first if list is not empty', () {
+      final list = [1, 2, 3, 4, 5];
+      list.removeFirst();
+      expect(list.length, 4);
+      expect(list, [2, 3, 4, 5]);
+    });
   });
 }

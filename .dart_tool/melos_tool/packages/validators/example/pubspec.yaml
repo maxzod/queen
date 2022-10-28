@@ -1,0 +1,27 @@
+# Generated file - do not commit this file.
+{
+  "name": "queen_validators_example",
+  "version": "1.0.0+1",
+  "publish_to": "none",
+  "environment": {
+    "sdk": ">=2.12.0 <3.0.0"
+  },
+  "description": "example app for the queen_validators package .",
+  "dependencies": {
+    "flutter": {
+      "sdk": "flutter"
+    },
+    "queen_validators": "^0.0.1"
+  },
+  "dev_dependencies": {
+    "lint": "^1.8.1"
+  },
+  "dependency_overrides": {
+    "queen_validators": {
+      "path": ".."
+    }
+  },
+  "flutter": {
+    "uses-material-design": true
+  }
+}
