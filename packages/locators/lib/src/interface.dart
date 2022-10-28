@@ -17,13 +17,21 @@ abstract class ContainerInterface {
   /// insert `dependency` into the container
   void put<I>(I dependency, {String? tag});
 
+  /// insert `dependency` into the container if not registered before
+  void putIfAbsent<I>(I dependency, {String? tag});
+
   /// insert dependency builder function into the container
   /// builds the dependency only once (when first needed)
   void putLazy<S>(S Function() builder, {String? tag});
 
+  /// insert `dependency` into the container if not registered before
+  void putLazyIfAbsent<S>(S Function() builder, {String? tag});
+
   /// insert dependency factory into the container
   /// build a new instance every time needed
   void factory<S>(S Function() builder, {String? tag});
+
+  void factoryIfAbsent<S>(S Function() builder, {String? tag});
 
   /// return `dependency` from the container
   /// retrieving behavior might changes and depends on how did you insert it

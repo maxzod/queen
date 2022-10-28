@@ -29,6 +29,17 @@ class LocatorsContainer extends ContainerInterface {
         tag: tag,
       );
   @override
+  void putIfAbsent<I>(
+    I dependency, {
+    String? tag,
+  }) =>
+      contains<I>(tag: tag)
+          ? null
+          : insert(
+              SingletonManger<I>(dependency),
+              tag: tag,
+            );
+  @override
   void putLazy<S>(
     S Function() builder, {
     String? tag,
@@ -40,6 +51,14 @@ class LocatorsContainer extends ContainerInterface {
   }
 
   @override
+  void putLazyIfAbsent<S>(S Function() builder, {String? tag}) =>
+      contains<S>(tag: tag)
+          ? null
+          : insert(
+              LazySingletonManager<S>(builder),
+              tag: tag,
+            );
+  @override
   void factory<S>(
     S Function() builder, {
     String? tag,
@@ -49,6 +68,15 @@ class LocatorsContainer extends ContainerInterface {
       tag: tag,
     );
   }
+
+  @override
+  void factoryIfAbsent<S>(S Function() builder, {String? tag}) =>
+      contains<S>(tag: tag)
+          ? null
+          : insert(
+              FactoryManager<S>(builder),
+              tag: tag,
+            );
 
   @override
   S find<S>({
