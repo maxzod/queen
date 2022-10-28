@@ -8,7 +8,7 @@ import '../nations.dart';
 class LangConfig {
   /// coning base class
   const LangConfig({
-    this.fallbackLocale = const Locale('ar'),
+    this.fallbackLocale = const Locale('en'),
     this.baseLoader = const AppAssetsLoader(),
     this.supportedLocales = const [
       Locale('ar'),

@@ -14,7 +14,7 @@ class TransNotifier extends ChangeNotifier {
   @visibleForTesting
   final Map<String, Object?> translations = {};
 
-  /// set up Nations controller
+  /// *  set up Nations controller
   Future<void> boot() async {
     currentLocale = localeToUse(
       fallback: AppLang.fallbackLocale,
@@ -44,7 +44,7 @@ class TransNotifier extends ChangeNotifier {
     }
 
     _app.addAll(const NationsAssetsLoader().load(locale));
-    final baseData = await AppLang.config.baseLoader.load(locale);
+    final baseData = await AppLang.baseLoader.load(locale);
 
     final result = mergeTwoMaps(_app, baseData)?.cast<String, Object?>();
 

@@ -30,6 +30,7 @@ abstract class AppLang {
 
   /// * return current `LangConfig`
   static LangConfig get config => find<LangConfig>();
+  static NationsLoader get baseLoader => config.baseLoader;
 
   /// * return true if the current locale == the parameter
   static bool equals(Locale locale) => current == locale;

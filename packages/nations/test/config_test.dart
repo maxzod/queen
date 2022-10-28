@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nations/nations.dart';
 
 import 'lib.dart';
+import 'test_assets.dart';
 
 void main() => test(
       'config always return null',
@@ -15,6 +17,9 @@ void main() => test(
     );
 
 class NationsTestConfig extends LangConfig {
+  @override
+  NationsLoader get baseLoader => const TestAssetsLoader();
+
   @override
   List<NationsLoader> get loaders => [
         NationsTestLoader(),

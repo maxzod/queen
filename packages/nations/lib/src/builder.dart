@@ -7,6 +7,7 @@ import 'package:nations/nations.dart';
 class LangBuilder extends StatefulWidget {
   /// the app builder
   final WidgetBuilder builder;
+
   const LangBuilder({
     super.key,
     required this.builder,

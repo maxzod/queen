@@ -2,14 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:locators/locators.dart';
 import 'package:nations/nations.dart';
+import 'package:qcore/qcore.dart';
+
+import 'test_assets.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  const config = LangConfig();
+  TestWidgetsFlutterBinding.ensureInitialized();
+  const config = LangConfig(
+    baseLoader: TestAssetsLoader(),
+    loaders: [],
+  );
 
   setUp(
     () async {
-      await PrefsLauncher().boot();
+      await bootLaunchers([PrefsLauncher()]);
     },
   );
   tearDown(
