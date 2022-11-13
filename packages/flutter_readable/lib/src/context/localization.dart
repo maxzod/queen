@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 
+/// * Localization shortcuts
 extension RContextLocalization on BuildContext {
-  /// * Localization shortcuts
+  /// shortcut for `Directionality.of(context)`
+  TextDirection get directionality => Directionality.of(this);
 
-  /// shortcut for `Directionality.of(context) == TextDirection.rtl``
-  bool get isRtl => Directionality.of(this) == TextDirection.rtl;
+  /// shortcut for `Directionality.of(context) == TextDirection.rtl`
+  bool get isRtl => directionality == TextDirection.rtl;
 
-  /// shortcut for `Directionality.of(context) == TextDirection.ltr``
-  bool get isLtr => Directionality.of(this) == TextDirection.ltr;
+  /// shortcut for `Directionality.of(context) == TextDirection.ltr`
+  bool get isLtr => directionality == TextDirection.ltr;
+
+  /// shortcut for `Localizations.of(context)`
+  Locale get locale => Localizations.localeOf(this);
 }

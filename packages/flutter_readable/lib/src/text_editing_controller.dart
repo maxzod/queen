@@ -7,11 +7,13 @@ extension RTextEditingController on TextEditingController {
 
   int get length => text.length;
 
-  void append(String input) {
-    text = '$text$input';
-  }
+  void append(
+    String input,
+  ) =>
+      text = '$text$input';
 
-  void appendNewLine(String input) {
-    text = '$text\n$input';
-  }
+  void appendNewLine(
+    String input,
+  ) =>
+      text = '$text\n$input';
 }

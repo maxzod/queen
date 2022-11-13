@@ -40,6 +40,8 @@ class TestXPage extends StatelessWidget {
                 /// * context
                 'overlay': (ctx) => identical(ctx.overlay, Overlay.of(ctx)),
                 'scaffold': (ctx) => identical(ctx.scaffold, Scaffold.of(ctx)),
+                'scaffoldMaybeOf': (ctx) =>
+                    identical(ctx.scaffoldMaybeOf, Scaffold.maybeOf(ctx)),
                 'scaffoldMessenger': (ctx) =>
                     identical(ctx.scaffoldMessenger, ScaffoldMessenger.of(ctx)),
 
@@ -49,10 +51,24 @@ class TestXPage extends StatelessWidget {
                     ctx.isRtl == (Directionality.of(ctx) == TextDirection.rtl),
                 'isLtr': (ctx) =>
                     ctx.isLtr == (Directionality.of(ctx) == TextDirection.ltr),
+                'locale': (ctx) =>
+                    identical(ctx.locale, Localizations.localeOf(context)),
 
                 /// * Navigator
                 'canPop': (ctx) =>
                     identical(ctx.canPop, Navigator.of(ctx).canPop()),
+                'rootNavigator': (ctx) => identical(
+                      ctx.rootNavigator,
+                      Navigator.of(ctx, rootNavigator: true),
+                    ),
+                'focusScope': (ctx) => identical(
+                      ctx.focusScope,
+                      FocusScope.of(ctx),
+                    ),
+                'form': (ctx) => identical(
+                      ctx.form,
+                      Form.of(ctx),
+                    ),
 
                 /// * text theme
                 'bodyText1': (ctx) => identical(
@@ -175,6 +191,7 @@ class TestXPage extends StatelessWidget {
                       ctx.scaffoldBackgroundColor,
                       Theme.of(context).scaffoldBackgroundColor,
                     ),
+
                 'bottomAppBarColor': (ctx) => identical(
                       ctx.bottomAppBarColor,
                       Theme.of(context).bottomAppBarColor,
@@ -238,6 +255,10 @@ class TestXPage extends StatelessWidget {
                 'buttonPrimaryColor': (ctx) => identical(
                       ctx.buttonPrimaryColor,
                       Theme.of(context).buttonTheme.colorScheme?.primary,
+                    ),
+                'secondary': (ctx) => identical(
+                      ctx.secondary,
+                      Theme.of(context).colorScheme.secondary,
                     ),
               };
               for (final ext in extensions.entries) {
