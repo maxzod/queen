@@ -1,0 +1,33 @@
+# Generated file - do not commit this file.
+{
+  "name": "qprefs",
+  "version": "0.0.1",
+  "environment": {
+    "sdk": ">=2.18.0 <3.0.0",
+    "flutter": ">=1.17.0"
+  },
+  "description": "A new Flutter package project.",
+  "dependencies": {
+    "flutter": {
+      "sdk": "flutter"
+    },
+    "shared_preferences": "^2.0.15",
+    "locators": "^0.0.1",
+    "qcore": "^0.0.1"
+  },
+  "dev_dependencies": {
+    "flutter_test": {
+      "sdk": "flutter"
+    },
+    "flutter_lints": "^2.0.0"
+  },
+  "dependency_overrides": {
+    "locators": {
+      "path": "..\\\\locators"
+    },
+    "qcore": {
+      "path": "..\\\\qcore"
+    }
+  },
+  "flutter": null
+}
